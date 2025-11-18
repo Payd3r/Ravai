@@ -280,5 +280,76 @@ export const projectDetails: Record<string, ProjectDetail> = {
       author: 'Marco Colombo',
       role: 'Proprietario La Lariana'
     }
+  },
+  'project-5': {
+    id: 'project-5',
+    title: 'InsideFaraoStudio',
+    subtitle: 'Fotografo Professionista',
+    description: 'Sito web su misura per fotografo con gestione progetti, galleria e pannello admin per upload e gestione contenuti.',
+    year: 2025,
+    client: 'Farao Studio',
+    url: 'https://faraostudio.andrea-mauri.duckdns.org/',
+    category: 'Fotografia',
+    
+    businessGoals: [
+      'Presentare il portfolio in modo elegante e professionale',
+      'Gestire autonomamente contenuti e progetti fotografici',
+      'Offrire un\'esperienza visiva di alta qualità mantenendo performance eccellenti'
+    ],
+    
+    features: [
+      'Gestione personalizzata dei progetti con video, foto e descrizioni',
+      'Pagina Admin su misura per upload e gestione contenuti',
+      'Ottimizzazione immagini con diversi formati e thumbnail',
+      'Download gratuito delle foto originali in alta qualità',
+      'Galleria con foto in evidenza per Home e sezione dedicata',
+      'Interfaccia veloce e responsive'
+    ],
+    
+    results: [
+      'Portfolio online professionale con alta qualità visiva',
+      'Gestione autonoma dei contenuti tramite pannello admin intuitivo',
+      'Navigazione fluida grazie all\'ottimizzazione intelligente delle immagini'
+    ],
+    
+    process: [
+      {
+        title: 'Progettazione UI/UX',
+        description: 'Creazione di un design elegante che valorizza le fotografie mantenendo focus sull\'esperienza visiva'
+      },
+      {
+        title: 'Sviluppo Backend',
+        description: 'Implementazione del sistema di gestione contenuti e ottimizzazione delle immagini con Sharp e imagemin'
+      },
+      {
+        title: 'Implementazione Frontend',
+        description: 'Sviluppo delle pagine Home, Galleria, Progetti e interfaccia Admin personalizzata'
+      },
+      {
+        title: 'Ottimizzazione Media',
+        description: 'Configurazione di conversioni multiple delle immagini preservando gli originali ad alta qualità'
+      },
+      {
+        title: 'Testing e Deploy',
+        description: 'Test delle performance, deploy con Docker e NGINX per garantire velocità e affidabilità'
+      }
+    ],
+    
+    mockups: [
+      '/carouselMockup/rafa/1.png',
+      '/carouselMockup/rafa/2.png',
+      '/carouselMockup/rafa/3.png',
+      '/carouselMockup/rafa/4.png'
+    ],
+    
+    // Immagine di sfondo per la hero section
+    heroImage: '/assets/projects/insidefaraostudio-main.png',
+    
+    testimonial: {
+      text: 'Il sito rispecchia perfettamente la mia visione artistica. Posso gestire autonomamente tutti i miei progetti e le foto vengono mostrate con una qualità eccezionale senza rallentare la navigazione.',
+      author: 'Raffaele',
+      role: 'Fotografo Professionista'
+    }
   }
+
 }; 

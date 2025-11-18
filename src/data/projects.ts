@@ -48,6 +48,18 @@ export const projects: Project[] = [
     url: 'https://lariana.andrea-mauri.duckdns.org/',
     github: 'https://github.com/Payd3r/Lariana',
     category: 'Pizzeria & Ristorante'
+  },
+  {
+    id: 'project-5',
+    title: 'Farao Studio',
+    subtitle: 'Fotografia',
+    description: 'Portfolio fotografico per un fotografo professionale con gallerie e dettagliato descrizione dei servizi.',
+    image: '/cardCover/faraostudio.jpg',
+    year: 2025,
+    client: 'Farao Studio',
+    url: 'https://faraostudio.andrea-mauri.duckdns.org/',
+    github: 'https://github.com/Payd3r/rafa',
+    category: 'Fotografia'
   }
 ];
 
@@ -71,5 +83,10 @@ export const categories = [
     id: 'Centro Estetico',
     name: 'Centro Estetico',
     description: 'Centro Estetico'
+  },
+  {
+    id: 'Fotografia',
+    name: 'Fotografia',
+    description: 'Fotografia'
   }
 ];
