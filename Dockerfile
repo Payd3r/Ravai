@@ -7,7 +7,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install all dependencies (including devDependencies for build)
-RUN npm ci
+# --no-audit e --no-fund per velocizzare la build
+RUN npm ci --no-audit --no-fund
 
 # Copy source code
 COPY . .
