@@ -29,6 +29,9 @@ COPY --from=build /app/dist /usr/share/nginx/html
 RUN ls -la /usr/share/nginx/html && \
     test -f /usr/share/nginx/html/index.html || (echo "ERRORE: index.html non trovato!" && exit 1)
 
+# Rimuovi la configurazione di default di nginx
+RUN rm -f /etc/nginx/conf.d/default.conf
+
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 

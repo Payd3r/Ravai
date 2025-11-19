@@ -4,7 +4,8 @@ import './index.css'
 import App from './App.tsx'
 
 // Registrazione del Service Worker per caching avanzato
-if ('serviceWorker' in navigator && import.meta.env.PROD) {
+// TEMPORANEAMENTE DISABILITATO per debug
+if (false && 'serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', async () => {
     try {
       // Verifica che il service worker sia accessibile prima di registrarlo
