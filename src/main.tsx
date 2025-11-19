@@ -7,7 +7,20 @@ import App from './App.tsx'
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', async () => {
     try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
+      // Verifica che il service worker sia accessibile prima di registrarlo
+      const swUrl = '/sw.js';
+      const response = await fetch(swUrl, { method: 'HEAD' });
+      
+      if (!response.ok) {
+        console.warn('Service Worker non disponibile, skip registrazione');
+        return;
+      }
+      
+      const registration = await navigator.serviceWorker.register(swUrl, {
+        scope: '/',
+        updateViaCache: 'none' // Forza l'aggiornamento del service worker
+      });
+      
       console.log('Service Worker registrato con successo:', registration.scope);
       
       // Gestisce gli aggiornamenti del service worker
@@ -22,8 +35,22 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
           });
         }
       });
+      
+      // Gestisce gli errori del service worker
+      registration.addEventListener('error', (error) => {
+        console.error('Errore nel Service Worker:', error);
+      });
     } catch (error) {
       console.error('Errore nella registrazione del Service Worker:', error);
+      // In caso di errore, prova a deregistrare eventuali service worker vecchi
+      try {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        for (const registration of registrations) {
+          await registration.unregister();
+        }
+      } catch (unregisterError) {
+        console.error('Errore nella deregistrazione:', unregisterError);
+      }
     }
   });
 }

@@ -74,20 +74,33 @@ self.addEventListener('fetch', (event) => {
 // Strategia Cache First - prova prima la cache, poi la rete
 async function cacheFirstStrategy(request) {
   try {
+    // Prova prima la cache
     const cacheResponse = await caches.match(request);
     if (cacheResponse) {
       return cacheResponse;
     }
 
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      const cache = await caches.open(DYNAMIC_CACHE);
-      cache.put(request, networkResponse.clone());
+    // Se non in cache, prova la rete
+    try {
+      const networkResponse = await fetch(request, {
+        cache: 'no-cache',
+        credentials: 'same-origin'
+      });
+      
+      if (networkResponse && networkResponse.ok) {
+        const cache = await caches.open(DYNAMIC_CACHE);
+        cache.put(request, networkResponse.clone());
+        return networkResponse;
+      }
+    } catch (fetchError) {
+      console.warn('Network fetch failed for:', request.url, fetchError);
     }
     
-    return networkResponse;
-  } catch (error) {
-    console.error('Cache First Strategy failed:', error);
+    // Se la rete fallisce, prova ancora la cache (potrebbe essere stata aggiornata)
+    const fallbackCache = await caches.match(request);
+    if (fallbackCache) {
+      return fallbackCache;
+    }
     
     // Fallback per immagini
     if (request.destination === 'image') {
@@ -97,24 +110,40 @@ async function cacheFirstStrategy(request) {
       );
     }
     
-    throw error;
+    // Per altri tipi di risorse, restituisci un errore 404
+    return new Response('Resource not available', { 
+      status: 404,
+      statusText: 'Not Found'
+    });
+  } catch (error) {
+    console.error('Cache First Strategy failed:', error);
+    return new Response('Service Worker Error', { 
+      status: 500,
+      statusText: 'Internal Server Error'
+    });
   }
 }
 
 // Strategia Network First - prova prima la rete, poi la cache
 async function networkFirstStrategy(request) {
   try {
-    const networkResponse = await fetch(request);
-    
-    if (networkResponse.ok) {
-      const cache = await caches.open(DYNAMIC_CACHE);
-      cache.put(request, networkResponse.clone());
+    // Prova prima la rete
+    try {
+      const networkResponse = await fetch(request, {
+        cache: 'no-cache',
+        credentials: 'same-origin'
+      });
+      
+      if (networkResponse && networkResponse.ok) {
+        const cache = await caches.open(DYNAMIC_CACHE);
+        cache.put(request, networkResponse.clone());
+        return networkResponse;
+      }
+    } catch (fetchError) {
+      console.warn('Network request failed, trying cache:', request.url, fetchError);
     }
     
-    return networkResponse;
-  } catch (error) {
-    console.error('Network request failed, trying cache:', error);
-    
+    // Se la rete fallisce, prova la cache
     const cacheResponse = await caches.match(request);
     if (cacheResponse) {
       return cacheResponse;
@@ -126,9 +155,24 @@ async function networkFirstStrategy(request) {
       if (fallbackResponse) {
         return fallbackResponse;
       }
+      // Se anche il fallback non c'è, prova index.html
+      const indexResponse = await caches.match('/index.html');
+      if (indexResponse) {
+        return indexResponse;
+      }
     }
     
-    throw error;
+    // Se tutto fallisce, restituisci un errore appropriato
+    return new Response('Resource not available', { 
+      status: 404,
+      statusText: 'Not Found'
+    });
+  } catch (error) {
+    console.error('Network First Strategy failed:', error);
+    return new Response('Service Worker Error', { 
+      status: 500,
+      statusText: 'Internal Server Error'
+    });
   }
 }
 
