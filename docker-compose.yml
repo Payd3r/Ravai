@@ -8,11 +8,14 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-    # Esponi temporaneamente una porta per test diretto (rimuovi dopo il test)
-    ports:
-      - "8099:80"
+    volumes:
+      - frontend_build:/app/dist
     networks:
       - web-proxy
+
+volumes:
+  frontend_build:
+    driver: local
 
 networks:
   web-proxy:
