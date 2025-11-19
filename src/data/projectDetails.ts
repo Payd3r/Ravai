@@ -336,14 +336,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     
     mockups: [
-      '/carouselMockup/rafa/1.png',
-      '/carouselMockup/rafa/2.png',
       '/carouselMockup/rafa/3.png',
-      '/carouselMockup/rafa/4.png'
+      '/carouselMockup/rafa/2.png',
+      '/carouselMockup/rafa/1.png'
     ],
     
     // Immagine di sfondo per la hero section
-    heroImage: '/assets/projects/insidefaraostudio-main.png',
+    heroImage: '/carouselMockup/rafa/0.png',
     
     testimonial: {
       text: 'Il sito rispecchia perfettamente la mia visione artistica. Posso gestire autonomamente tutti i miei progetti e le foto vengono mostrate con una qualità eccezionale senza rallentare la navigazione.',
