@@ -25,7 +25,7 @@ const Projects = () => {
             Trasformiamo le tue idee in realtà digitali
           </h1>
           <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Creiamo siti web moderni e performanti per ristoranti, B&B e centri estetici. 
+            Creiamo siti web moderni e performanti per piccole e medie imprese come ristoranti, B&B e altro ancora. 
             Ogni progetto è studiato su misura per far crescere il tuo business online.
           </p>
           
