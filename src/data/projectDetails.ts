@@ -411,13 +411,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     
     mockups: [
-      '/assets/carouselMockup/linktree/1.png',
-      '/assets/carouselMockup/linktree/2.png',
-      '/assets/carouselMockup/linktree/3.png',
+      '/carouselMockup/linktree/1.png',
+      '/carouselMockup/linktree/2.png',
+      '/carouselMockup/linktree/3.png',
 
     ],
     
-    heroImage: '/assets/carouselMockup/linktree/0.png',
+    heroImage: '/carouselMockup/linktree/0.png',
     
     testimonial: {
       text: 'La landing page linktree ha completamente trasformato il modo in cui gestisco i miei contenuti. Ora posso aggiungere e modificare prodotti autonomamente attraverso il pannello admin, e tutti i miei link sono centralizzati in un unico posto professionale.',

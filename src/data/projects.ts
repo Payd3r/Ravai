@@ -66,7 +66,7 @@ export const projects: Project[] = [
     title: 'Ilaria UGC Linktree',
     subtitle: 'Linktree',
     description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
-    image: '/assets/cardCover/linktree.jpg',
+    image: '/cardCover/linktree.jpg',
     year: 2025,
     client: 'Ilaria',
     url: 'https://ila.ravai.it/',
