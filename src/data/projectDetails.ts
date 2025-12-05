@@ -349,6 +349,81 @@ export const projectDetails: Record<string, ProjectDetail> = {
       author: 'Raffaele',
       role: 'Fotografo Professionista'
     }
+  },
+
+  'ilaria-Linktree': {
+    id: 'ilaria-Linktree',
+    title: 'Ilaria UGC Linktree',
+    subtitle: 'Linktree',
+    description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
+    year: 2025,
+    client: 'Ilaria',
+    url: 'https://ila.ravai.it/',
+    category: 'Linktree',
+    
+    businessGoals: [
+      'Centralizzare vendita guide, coaching, affiliazioni e portfolio in un unico Linktree',
+      'Gestione autonoma dei contenuti tramite pannello admin',
+      'Creare una presenza online professionale per creator UGC'
+    ],
+    
+    features: [
+      'Tab Best Selling, Free Guides, Blog, Portfolio con filtraggio lato frontend',
+      'Card prodotti con CTA, prezzi range, layout immagine sinistra/destra',
+      'Pannello admin per creazione/modifica/eliminazione prodotti',
+      'Upload immagini con Multer e salvataggio in /public/uploads',
+      'Validazione payload lato backend e gestione file JSON robusta',
+      'UI responsive con animazioni leggere (fade/scale) e SEO-friendly markup',
+      'Preset Docker + Nginx + supervisord per serve frontend e API'
+    ],
+    
+    results: [
+      'Web app full-stack completa e funzionante',
+      'Gestione autonoma dei contenuti tramite pannello admin',
+      'Deploy containerizzato con Docker e Nginx per alta disponibilità'
+    ],
+    
+    process: [
+      {
+        title: 'Raccolta Requisiti',
+        description: 'Analisi delle esigenze della creator UGC per centralizzare tutti i link in un\'unica landing page'
+      },
+      {
+        title: 'UI/UX Design',
+        description: 'Progettazione dell\'interfaccia con tab dinamiche e card prodotti personalizzabili'
+      },
+      {
+        title: 'API Express + Storage JSON',
+        description: 'Sviluppo del backend con Express, validazione payload e gestione file JSON per persistenza dati'
+      },
+      {
+        title: 'Frontend Vite/Tailwind',
+        description: 'Implementazione frontend React/TypeScript con Vite e Tailwind CSS per UI responsive'
+      },
+      {
+        title: 'Upload & Admin Panel',
+        description: 'Sviluppo del pannello admin per CRUD prodotti con upload immagini tramite Multer'
+      },
+      {
+        title: 'Docker/Nginx Deploy',
+        description: 'Configurazione Docker con Nginx e supervisord per deploy containerizzato'
+      }
+    ],
+    
+    mockups: [
+      '/assets/carouselMockup/linktree/1.png',
+      '/assets/carouselMockup/linktree/2.png',
+      '/assets/carouselMockup/linktree/3.png',
+
+    ],
+    
+    heroImage: '/assets/carouselMockup/linktree/0.png',
+    
+    testimonial: {
+      text: 'La landing page linktree ha completamente trasformato il modo in cui gestisco i miei contenuti. Ora posso aggiungere e modificare prodotti autonomamente attraverso il pannello admin, e tutti i miei link sono centralizzati in un unico posto professionale.',
+      author: 'Ilaria',
+      role: 'Creator UGC'
+    }
   }
 
 }; 

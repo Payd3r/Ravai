@@ -6,7 +6,7 @@ export interface ProjectDetail {
   year: number;
   client: string;
   url: string;
-  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico' | 'Fotografia';
+  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico' | 'Fotografia' | 'Linktree';
   
   // Informazioni business-oriented
   businessGoals: string[];

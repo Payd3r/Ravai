@@ -60,6 +60,18 @@ export const projects: Project[] = [
     url: 'https://faraostudio.andrea-mauri.duckdns.org/',
     github: 'https://github.com/Payd3r/rafa',
     category: 'Fotografia'
+  },
+  {
+    id: 'ilaria-Linktree',
+    title: 'Ilaria UGC Linktree',
+    subtitle: 'Linktree',
+    description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
+    image: '/assets/cardCover/linktree.jpg',
+    year: 2025,
+    client: 'Ilaria',
+    url: 'https://ila.ravai.it/',
+    github: 'https://github.com/Payd3r/linktree',
+    category: 'Linktree'
   }
 ];
 
@@ -88,5 +100,10 @@ export const categories = [
     id: 'Fotografia',
     name: 'Fotografia',
     description: 'Fotografia'
+  },
+  {
+    id: 'Linktree',
+    name: 'Linktree',
+    description: 'Linktree'
   }
 ];
