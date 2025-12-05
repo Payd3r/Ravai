@@ -8,7 +8,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
-  // Mappa per le immagini delle card
+  // Mappa per le immagini delle card (fallback per progetti vecchi)
   const getCardImage = (projectId: string) => {
     const imageMap: Record<string, string> = {
       'project-1': '/cardCover/i_gladiatori.jpg', // Placeholder per ora
@@ -16,11 +16,13 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       'project-3': '/cardCover/le_chic.jpg', // Placeholder per ora
       'project-4': '/cardCover/la_lariana.jpg',
       'project-5': '/cardCover/faraostudio.jpg',
+      'project-6': '/cardCover/linktree.jpg',
     };
     return imageMap[projectId] || null;
   };
 
-  const cardImage = getCardImage(project.id);
+  // Usa l'immagine del progetto se disponibile, altrimenti usa la mappa
+  const cardImage = project.image || getCardImage(project.id);
 
   return (
     <div

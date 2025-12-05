@@ -62,7 +62,7 @@ export const projects: Project[] = [
     category: 'Fotografia'
   },
   {
-    id: 'ilaria-Linktree',
+    id: 'project-6',
     title: 'Ilaria UGC Linktree',
     subtitle: 'Linktree',
     description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
