@@ -6,10 +6,7 @@ const DYNAMIC_CACHE = 'ravai-dynamic-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/logo.png',
-  '/cardCover/i_gladiatori.jpg',
-  '/cardCover/betta47.jpg',
-  '/cardCover/le_chic.jpg'
+  '/logo.png'
 ];
 
 // Installa il service worker
@@ -84,11 +81,11 @@ async function cacheFirstStrategy(request) {
       const cache = await caches.open(DYNAMIC_CACHE);
       cache.put(request, networkResponse.clone());
     }
-    
+
     return networkResponse;
   } catch (error) {
     console.error('Cache First Strategy failed:', error);
-    
+
     // Fallback per immagini
     if (request.destination === 'image') {
       return new Response(
@@ -96,7 +93,7 @@ async function cacheFirstStrategy(request) {
         { headers: { 'Content-Type': 'image/svg+xml' } }
       );
     }
-    
+
     throw error;
   }
 }
@@ -105,21 +102,21 @@ async function cacheFirstStrategy(request) {
 async function networkFirstStrategy(request) {
   try {
     const networkResponse = await fetch(request);
-    
+
     if (networkResponse.ok) {
       const cache = await caches.open(DYNAMIC_CACHE);
       cache.put(request, networkResponse.clone());
     }
-    
+
     return networkResponse;
   } catch (error) {
     console.error('Network request failed, trying cache:', error);
-    
+
     const cacheResponse = await caches.match(request);
     if (cacheResponse) {
       return cacheResponse;
     }
-    
+
     // Fallback per navigazione
     if (request.mode === 'navigate') {
       const fallbackResponse = await caches.match('/');
@@ -127,7 +124,7 @@ async function networkFirstStrategy(request) {
         return fallbackResponse;
       }
     }
-    
+
     throw error;
   }
 }
@@ -137,7 +134,7 @@ self.addEventListener('message', (event) => {
   if (event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-  
+
   if (event.data.type === 'GET_CACHE_SIZE') {
     getCacheSize().then((size) => {
       event.ports[0].postMessage({ cacheSize: size });
@@ -149,11 +146,11 @@ self.addEventListener('message', (event) => {
 async function getCacheSize() {
   const cacheNames = await caches.keys();
   let totalSize = 0;
-  
+
   for (const cacheName of cacheNames) {
     const cache = await caches.open(cacheName);
     const keys = await cache.keys();
-    
+
     for (const request of keys) {
       const response = await cache.match(request);
       if (response) {
@@ -162,6 +159,6 @@ async function getCacheSize() {
       }
     }
   }
-  
+
   return totalSize;
 }

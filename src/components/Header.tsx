@@ -23,39 +23,9 @@ const Header = () => {
         '/about': () => import('../pages/About'),
         '/contact': () => import('../pages/Contact')
       };
-
-      const preloadFunc = routeMap[href];
-      if (preloadFunc) {
-        preloadFunc().catch(() => {
-          // Ignore preload errors
-        });
-      }
     }
   };
 
-  // Preload delle immagini critiche dopo il mount
-  useEffect(() => {
-    const criticalImages = [
-      '/cardCover/i_gladiatori.jpg',
-      '/cardCover/betta47.jpg',
-      '/cardCover/le_chic.jpg'
-    ];
-
-    // Preload delle immagini con priorità bassa
-    const preloadImages = () => {
-      criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
-    };
-
-    // Usa requestIdleCallback se disponibile, altrimenti setTimeout
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(preloadImages);
-    } else {
-      setTimeout(preloadImages, 1000);
-    }
-  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
@@ -63,9 +33,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src="/1.png" 
-              alt="Ravai" 
+            <img
+              src="/1.png"
+              alt="Ravai"
               className="h-8 w-auto"
             />
           </Link>
@@ -76,11 +46,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-md font-semibold transition-colors ${
-                  location.pathname === item.href
-                    ? 'text-slate-900'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`text-md font-semibold transition-colors ${location.pathname === item.href
+                  ? 'text-slate-900'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
                 onMouseEnter={() => handleLinkHover(item.href)}
               >
                 {item.name}
@@ -105,11 +74,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors ${
-                    location.pathname === item.href
-                      ? 'text-slate-900'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
+                  className={`text-sm font-medium transition-colors ${location.pathname === item.href
+                    ? 'text-slate-900'
+                    : 'text-slate-600 hover:text-slate-900'
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
