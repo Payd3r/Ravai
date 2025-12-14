@@ -23,9 +23,42 @@ const Header = () => {
         '/about': () => import('../pages/About'),
         '/contact': () => import('../pages/Contact')
       };
+
+      const preloadFunc = routeMap[href];
+      if (preloadFunc) {
+        preloadFunc().catch(() => {
+          // Ignore preload errors
+        });
+      }
     }
   };
 
+  // Preload delle immagini critiche dopo il mount
+  useEffect(() => {
+    const criticalImages = [
+      '/cardCover/i_gladiatori.jpg',
+      '/cardCover/betta47.jpg',
+      '/cardCover/le_chic.jpg',
+      '/cardCover/la_lariana.jpg',
+      '/cardCover/faraostudio.jpg',
+      '/cardCover/linktree.jpg',
+    ];
+
+    // Preload delle immagini con priorità bassa
+    const preloadImages = () => {
+      criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    // Usa requestIdleCallback se disponibile, altrimenti setTimeout
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(preloadImages);
+    } else {
+      setTimeout(preloadImages, 1000);
+    }
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
