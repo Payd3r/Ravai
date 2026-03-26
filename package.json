@@ -3,8 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "vite",
+    "docker:dev": "docker compose -f docker-compose.dev.yml up --build",
     "build": "tsc -b && vite build",
     "build:optimized": "npm run optimize:images && npm run build",
     "build:analyze": "npm run build && npm run analyze:performance",
@@ -15,6 +19,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@fontsource/inter": "^5.1.0",
     "lucide-react": "^0.533.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

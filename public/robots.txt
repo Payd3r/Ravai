@@ -1,0 +1,10 @@
+# robots.txt per ravai.it
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ravai.it/sitemap.xml
+
+# Blocca accesso a risorse non necessarie
+Disallow: /api/
+Disallow: /*.json$

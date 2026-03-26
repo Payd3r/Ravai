@@ -5,11 +5,34 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: ravai_frontend
+    depends_on:
+      - backend
     restart: unless-stopped
     environment:
       NODE_ENV: production
+    # ports:
+    #   - "5173:5173"
     volumes:
       - frontend_build:/app/dist
+    networks:
+      - web-proxy
+
+  # Backend API - Invio preventivi con PDF
+  backend:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: ravai_backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      SMTP_HOST: smtps.aruba.it
+      SMTP_PORT: 465
+      SMTP_USER: info@ravai.it
+      SMTP_PASS: ${SMTP_PASS}
+      CORS_ORIGIN: ${CORS_ORIGIN:-*}
     networks:
       - web-proxy
 

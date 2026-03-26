@@ -67,12 +67,25 @@ export const projects: Project[] = [
     subtitle: 'Linktree',
     description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
     image: '/cardCover/linktree.jpg',
-    year: 2025,
+    year: 2026,
     client: 'Ilaria',
     url: 'https://ila.ravai.it/',
     github: 'https://github.com/Payd3r/linktree',
     category: 'Linktree'
+  },
+  {
+    id: 'project-7',
+    title: 'Nicola Calcabrini - Matematica Test Bocconi',
+    subtitle: 'Piattaforma E-learning',
+    description: 'Piattaforma per la preparazione al test d\'ingresso Bocconi, con video lezioni, esercizi interattivi, simulazioni e pannello admin per la gestione utenti e contenuti.',
+    image: '/cardCover/nicola.jpg',
+    year: 2026,
+    client: 'Nicola Calcabrini',
+    url: 'https://www.nicolacalcabrini.com/',
+    category: 'E-learning'
   }
+
+
 ];
 
 export const categories = [
@@ -105,5 +118,10 @@ export const categories = [
     id: 'Linktree',
     name: 'Linktree',
     description: 'Linktree'
+  },
+  {
+    id: 'E-learning',
+    name: 'E-learning',
+    description: 'E-learning'
   }
 ];

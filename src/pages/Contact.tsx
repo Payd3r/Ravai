@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from '../config/emailjs';
@@ -8,7 +9,8 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    privacyConsent: false
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +18,10 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.privacyConsent) {
+      setError('Per inviare il messaggio devi accettare la Privacy Policy e i Termini e Condizioni.');
+      return;
+    }
     setIsLoading(true);
     setError('');
 
@@ -32,9 +38,9 @@ const Contact = () => {
       };
 
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-      
+
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '', privacyConsent: false });
     } catch (error) {
       console.error('Errore invio email:', error);
       setError('Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi.');
@@ -44,9 +50,10 @@ const Contact = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const target = e.target as HTMLInputElement;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [target.name]: target.type === 'checkbox' ? target.checked : target.value
     });
   };
 
@@ -80,7 +87,7 @@ const Contact = () => {
             Parliamo del tuo progetto
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Siamo sempre entusiasti di nuove collaborazioni. Raccontaci la tua idea e insieme 
+            Siamo sempre entusiasti di nuove collaborazioni. Raccontaci la tua idea e insieme
             la trasformeremo in qualcosa di straordinario.
           </p>
         </div>
@@ -93,7 +100,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div>
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Invia un messaggio</h2>                
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">Invia un messaggio</h2>
               </div>
 
               {error && (
@@ -146,7 +153,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
                       Oggetto
@@ -162,7 +169,7 @@ const Contact = () => {
                       placeholder="Di cosa vuoi parlare?"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
                       Messaggio
@@ -178,7 +185,27 @@ const Contact = () => {
                       placeholder="Raccontaci del tuo progetto..."
                     />
                   </div>
-                  
+
+                  <label className="flex items-start gap-3 cursor-pointer !mt-2 ms-1">
+                    <input
+                      type="checkbox"
+                      name="privacyConsent"
+                      checked={formData.privacyConsent}
+                      onChange={handleChange}
+                      className="mt-1 w-5 h-5 rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                    />
+                    <span className="text-sm text-slate-600 pt-1">
+                      Accetto la{' '}
+                      <Link to="/privacy" className="text-slate-900 font-medium hover:underline">
+                        Privacy Policy
+                      </Link>
+                      {' '}e i{' '}
+                      <Link to="/terms" className="text-slate-900 font-medium hover:underline">
+                        Termini e Condizioni
+                      </Link>
+                    </span>
+                  </label>
+
                   <button
                     type="submit"
                     disabled={isLoading}
@@ -227,7 +254,7 @@ const Contact = () => {
                 ))}
               </div>
 
-              
+
             </div>
           </div>
         </div>

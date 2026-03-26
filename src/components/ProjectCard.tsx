@@ -8,12 +8,12 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
-  // Mappa per le immagini delle card (fallback per progetti vecchi)
+  // Mappa per le immagini delle card (fallback)
   const getCardImage = (projectId: string) => {
     const imageMap: Record<string, string> = {
-      'project-1': '/cardCover/i_gladiatori.jpg', // Placeholder per ora
+      'project-1': '/cardCover/i_gladiatori.jpg',
       'project-2': '/cardCover/betta47.jpg',
-      'project-3': '/cardCover/le_chic.jpg', // Placeholder per ora
+      'project-3': '/cardCover/le_chic.jpg',
       'project-4': '/cardCover/la_lariana.jpg',
       'project-5': '/cardCover/faraostudio.jpg',
       'project-6': '/cardCover/linktree.jpg',
@@ -21,48 +21,48 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
     return imageMap[projectId] || null;
   };
 
-  // Usa l'immagine del progetto se disponibile, altrimenti usa la mappa
   const cardImage = project.image || getCardImage(project.id);
 
   return (
     <div
-      className="card overflow-hidden cursor-pointer group transform hover:scale-105 transition-all duration-300"
+      className="bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-slate-100 hover:border-[rgb(15,23,42)] overflow-hidden cursor-pointer group transition-all duration-500 flex flex-col h-full"
       onClick={onClick}
     >
-      {/* Image */}
-      <div className="relative overflow-hidden">
+      {/* Container Immagine */}
+      <div className="relative overflow-hidden w-full aspect-[16/10] sm:aspect-[4/3]">
         {cardImage ? (
-          <div className="aspect-[4/3] relative">
-            <OptimizedImage
-              src={cardImage}
-              alt={`${project.title} - ${project.subtitle}`}
-              className="absolute inset-0"
-              priority={false} // Lazy load per le card
-            />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-          </div>
+          <OptimizedImage
+            src={cardImage}
+            alt={`${project.title} - ${project.subtitle}`}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+            priority={false} // Lazy load
+          />
         ) : (
-          <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 flex items-center justify-center transition-transform duration-700">
             <div className="text-center">
-              <div className="text-slate-900 text-6xl font-bold mb-2">
+              <div className="text-slate-900 text-6xl font-black opacity-20 mb-2">
                 {project.title.charAt(0)}
               </div>
-              <p className="text-slate-700 font-medium">Mockup Preview</p>
+              <p className="text-slate-500 font-medium">Anteprima</p>
             </div>
           </div>
         )}
-        
-        {/* Links positioned in top-right */}
-        <div className="absolute top-3 right-3 flex gap-2">
+
+        {/* Overlay Scuro al passaggio del mouse */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/0 to-slate-900/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+        {/* Pulsanti Fluttuanti (Links) */}
+        <div className="absolute top-4 right-4 flex gap-2 translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
           {project.url && (
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white/90 backdrop-blur-sm p-2 rounded-lg hover:bg-white transition-colors"
+              className="bg-white/90 backdrop-blur-md p-2.5 rounded-xl hover:bg-white text-slate-700 hover:text-[rgb(15,23,42)] shadow-lg transition-all duration-300"
               onClick={(e) => e.stopPropagation()}
+              title="Visita il sito"
             >
-              <ExternalLink className="w-4 h-4 text-slate-700" />
+              <ExternalLink className="w-5 h-5" />
             </a>
           )}
           {project.github && (
@@ -70,32 +70,46 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white/90 backdrop-blur-sm p-2 rounded-lg hover:bg-white transition-colors"
+              className="bg-white/90 backdrop-blur-md p-2.5 rounded-xl hover:bg-white text-slate-700 hover:text-[rgb(15,23,42)] shadow-lg transition-all duration-300"
               onClick={(e) => e.stopPropagation()}
+              title="Vedi su GitHub"
             >
-              <Github className="w-4 h-4 text-slate-700" />
+              <Github className="w-5 h-5" />
             </a>
           )}
         </div>
       </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <span className="flex items-center text-slate-700 text-sm bg-slate-200 px-3 py-1 rounded-full">
-              <Calendar className="w-4 h-4 mr-1" />
-              {project.year}
-            </span>
-            <span className="text-white text-sm bg-slate-700 px-3 py-1 rounded-full font-medium">
-              {project.subtitle}
-            </span>
-          </div>
+      {/* Contenuto Testuale */}
+      <div className="p-5 sm:p-8 flex flex-col flex-1 bg-white relative z-10 transition-colors duration-500">
+
+        {/* Tags */}
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          <span className="inline-flex items-center text-slate-600 text-xs font-semibold bg-slate-100 px-3 py-1.5 rounded-full ring-1 ring-slate-900/5 group-hover:bg-slate-200 group-hover:text-[rgb(15,23,42)] transition-colors">
+            <Calendar className="w-3.5 h-3.5 mr-1.5" />
+            {project.year}
+          </span>
+          <span className="inline-flex items-center text-white text-xs font-bold bg-slate-800 px-3 py-1.5 rounded-full shadow-sm group-hover:bg-[rgb(15,23,42)] transition-colors">
+            {project.subtitle}
+          </span>
         </div>
 
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">{project.title}</h3>
+        {/* Titolo e Descrizione */}
+        <h3 className="text-2xl font-extrabold text-slate-900 mb-3 group-hover:text-[rgb(15,23,42)] transition-colors duration-300 line-clamp-1">
+          {project.title}
+        </h3>
 
-        <p className="text-slate-600 text-md leading-relaxed">{project.description}</p>
+        <p className="text-slate-600 text-base leading-relaxed line-clamp-3 mb-4 flex-1">
+          {project.description}
+        </p>
+
+        {/* CTA visibile solo all'hover su desktop, o statica su mobile (indicatore) */}
+        <div className="mt-auto pt-4 border-t border-slate-100 flex items-center text-sm font-bold text-slate-900 opacity-70 group-hover:opacity-100 group-hover:text-[rgb(15,23,42)] transition-all">
+          <span>Scopri i dettagli</span>
+          <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
       </div>
     </div>
   );

@@ -6,25 +6,25 @@ export interface ProjectDetail {
   year: number;
   client: string;
   url: string;
-  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico' | 'Fotografia' | 'Linktree';
-  
+  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico' | 'Fotografia' | 'Linktree' | 'E-learning';
+
   // Informazioni business-oriented
   businessGoals: string[];
   features: string[];
   results: string[];
-  
+
   // Processo di lavoro
   process: {
     title: string;
     description: string;
   }[];
-  
+
   // Mockups
   mockups: string[];
-  
+
   // Immagine di sfondo per la hero section
   heroImage: string;
-  
+
   // Confronto prima/dopo (opzionale)
   beforeAfter?: Array<{
     before: string;

@@ -55,6 +55,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Non intercettare le API - lasciarle passare direttamente
+  if (url.pathname.startsWith('/api/')) {
+    return;
+  }
+
   // Strategia di cache
   if (request.destination === 'image') {
     // Strategia Cache First per le immagini

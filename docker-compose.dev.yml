@@ -1,0 +1,45 @@
+# Ambiente Docker in locale con hot reload - come produzione ma con sviluppo attivo
+# Uso: docker compose -f docker-compose.dev.yml up --build
+
+services:
+  vetrina-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ravai_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      VITE_PROXY_TARGET: http://backend:3000
+    depends_on:
+      - backend
+    networks:
+      - ravai-dev
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    container_name: ravai_backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app
+      - ./public:/app/public
+      - /app/node_modules
+    environment:
+      PORT: 3000
+      SMTP_HOST: smtps.aruba.it
+      SMTP_PORT: 465
+      SMTP_USER: info@ravai.it
+      SMTP_PASS: ${SMTP_PASS}
+      CORS_ORIGIN: "*"
+    networks:
+      - ravai-dev
+
+networks:
+  ravai-dev:
+    driver: bridge

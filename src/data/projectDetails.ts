@@ -10,14 +10,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: 'I Gladiatori',
     url: 'https://gladiatori.andrea-mauri.duckdns.org/',
     category: 'Pizzeria & Ristorante',
-    
+
     // Informazioni business
     businessGoals: [
       'Migliorare la visibilità del ristorante',
       'Facilitare la visualizzazione del menu tramite smartphone',
       'Creare un\'esperienza digitale coinvolgente'
     ],
-    
+
     // Caratteristiche principali (focus business)
     features: [
       'Menu digitale per ogni tipo (pizzeria, pizzeria asporto, ristorante)',
@@ -27,14 +27,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Presentazione online del ristorante/pizzeria',
       'Sito statico per visualizzazione menu'
     ],
-    
+
     // Risultati ottenuti
     results: [
       'Sito completamente rinnovato e moderno',
       'Miglioramento significativo dell\'usabilità',
       'Design responsive per tutti i dispositivi'
     ],
-    
+
     // Processo di lavoro
     process: [
       {
@@ -54,17 +54,17 @@ export const projectDetails: Record<string, ProjectDetail> = {
         description: 'Test su diversi dispositivi e ottimizzazione delle performance'
       }
     ],
-    
+
     // Mockups (percorsi delle immagini)
     mockups: [
       '/carouselMockup/I_Gladiatori/1.png',
       '/carouselMockup/I_Gladiatori/2.png',
       '/carouselMockup/I_Gladiatori/3.png',
     ],
-    
+
     // Immagine di sfondo per la hero section
     heroImage: '/carouselMockup/I_Gladiatori/0.png',
-    
+
     // Testimonianza cliente
     testimonial: {
       text: 'Il nuovo sito ha completamente trasformato la nostra presenza online. Ora i clienti possono facilmente visualizzare il menu anche da smartphone e l\'esperienza è molto più professionale.',
@@ -72,7 +72,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       role: 'Proprietario I Gladiatori'
     }
   },
-  
+
   'project-2': {
     id: 'project-2',
     title: 'Betta47',
@@ -82,13 +82,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: 'Betta47 B&B',
     url: 'https://betta47.andrea-mauri.duckdns.org/',
     category: 'Bed & Breakfast',
-    
+
     businessGoals: [
       'Modernizzare il sito esistente datato',
       'Migliorare la navigazione e l\'esperienza utente',
       'Creare una presenza online più professionale'
     ],
-    
+
     features: [
       'Design moderno e responsive',
       'Varie gallerie e caroselli',
@@ -97,13 +97,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Homepage per spiegare la struttura e la zona',
       'Correzione problemi di traduzione'
     ],
-    
+
     results: [
       'Sito completamente rinnovato e moderno',
       'Miglioramento significativo della navigazione',
       'Presenza online più professionale'
     ],
-    
+
     process: [
       {
         title: 'Analisi del Sito Esistente',
@@ -122,16 +122,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
         description: 'Miglioramento dei contenuti e correzione delle traduzioni'
       }
     ],
-    
+
     mockups: [
       '/carouselMockup/Betta47/1.png',
       '/carouselMockup/Betta47/2.png',
       '/carouselMockup/Betta47/3.png',
     ],
-    
+
     // Immagine di sfondo per la hero section
     heroImage: '/carouselMockup/Betta47/0.png',
-    
+
     // Confronto prima/dopo
     beforeAfter: [
       { before: '/carouselMockup/Betta47/before-1.svg', after: '/carouselMockup/Betta47/after-1.svg', title: 'Homepage' },
@@ -146,7 +146,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       role: 'Proprietaria Betta47 B&B'
     }
   },
-  
+
   'project-3': {
     id: 'project-3',
     title: 'Le Chic di Cinzia',
@@ -156,13 +156,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: 'Le Chic di Cinzia',
     url: 'https://lechic.andrea-mauri.duckdns.org/',
     category: 'Centro Estetico',
-    
+
     businessGoals: [
       'Aumentare la visibilità del centro estetico',
       'Ampliare il mercato di riferimento',
       'Digitalizzare la presenza online'
     ],
-    
+
     features: [
       'Galleria servizi e trattamenti',
       'Catalogo prodotti',
@@ -171,13 +171,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Presenza online completa',
       'Integrazione con social media'
     ],
-    
+
     results: [
       'Riduzione significativa delle chiamate telefoniche',
       'Aumento dei nuovi clienti',
       'Presenza online professionale creata da zero'
     ],
-    
+
     process: [
       {
         title: 'Analisi dei Bisogni',
@@ -196,16 +196,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
         description: 'Deploy del sito e formazione del cliente'
       }
     ],
-    
+
     mockups: [
       '/carouselMockup/Le_chic/1.png',
       '/carouselMockup/Le_chic/2.png',
       '/carouselMockup/Le_chic/3.png',
     ],
-    
+
     // Immagine di sfondo per la hero section
     heroImage: '/carouselMockup/Le_chic/0.png',
-    
+
     testimonial: {
       text: 'Il nuovo sito ha completamente trasformato la nostra presenza online. Ora abbiamo una galleria professionale dei nostri servizi e i clienti possono prenotare facilmente online.',
       author: 'Cinzia Verdi',
@@ -222,14 +222,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: 'La Lariana',
     url: 'https://lariana.andrea-mauri.duckdns.org/',
     category: 'Pizzeria & Ristorante',
-    
+
     businessGoals: [
       'Creare una presenza online professionale per la pizzeria',
       'Presentare l\'offerta di pizze speciali (integrale e senza glutine)',
       'Facilitare l\'ordinazione e il contatto con i clienti',
       'Valorizzare la location di Erba e i servizi offerti'
     ],
-    
+
     features: [
       'Menu digitale completo con pizze tradizionali e speciali',
       'Sezione dedicata alle pizze con impasto integrale',
@@ -240,14 +240,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Galleria fotografica dei prodotti',
       'Informazioni sui posti a sedere disponibili'
     ],
-    
+
     results: [
       'Sito web moderno e professionale creato da zero',
       'Miglioramento della visibilità online della pizzeria',
       'Esperienza utente ottimizzata per l\'ordinazione',
       'Cliente completamente soddisfatto del risultato'
     ],
-    
+
     process: [
       {
         title: 'Analisi dei Requisiti',
@@ -266,15 +266,15 @@ export const projectDetails: Record<string, ProjectDetail> = {
         description: 'Test finali, ottimizzazione per dispositivi mobili e messa online'
       }
     ],
-    
+
     mockups: [
       '/carouselMockup/La_Lariana/1.png',
       '/carouselMockup/La_Lariana/2.png',
       '/carouselMockup/La_Lariana/3.png',
     ],
-    
+
     heroImage: '/carouselMockup/La_Lariana/0.png',
-    
+
     testimonial: {
       text: 'Sono completamente soddisfatto del nuovo sito web! Ora i nostri clienti possono vedere facilmente tutte le nostre specialità, dalle pizze tradizionali a quelle integrali e senza glutine. Il sito rappresenta perfettamente la nostra pizzeria.',
       author: 'Marco Colombo',
@@ -290,13 +290,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: 'Farao Studio',
     url: 'https://faraostudio.andrea-mauri.duckdns.org/',
     category: 'Fotografia',
-    
+
     businessGoals: [
       'Presentare il portfolio in modo elegante e professionale',
       'Gestire autonomamente contenuti e progetti fotografici',
       'Offrire un\'esperienza visiva di alta qualità mantenendo performance eccellenti'
     ],
-    
+
     features: [
       'Gestione personalizzata dei progetti con video, foto e descrizioni',
       'Pagina Admin su misura per upload e gestione contenuti',
@@ -305,13 +305,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Galleria con foto in evidenza per Home e sezione dedicata',
       'Interfaccia veloce e responsive'
     ],
-    
+
     results: [
       'Portfolio online professionale con alta qualità visiva',
       'Gestione autonoma dei contenuti tramite pannello admin intuitivo',
       'Navigazione fluida grazie all\'ottimizzazione intelligente delle immagini'
     ],
-    
+
     process: [
       {
         title: 'Progettazione UI/UX',
@@ -334,16 +334,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
         description: 'Test delle performance, deploy con Docker e NGINX per garantire velocità e affidabilità'
       }
     ],
-    
+
     mockups: [
       '/carouselMockup/rafa/3.png',
       '/carouselMockup/rafa/2.png',
       '/carouselMockup/rafa/1.png'
     ],
-    
+
     // Immagine di sfondo per la hero section
     heroImage: '/carouselMockup/rafa/0.png',
-    
+
     testimonial: {
       text: 'Il sito rispecchia perfettamente la mia visione artistica. Posso gestire autonomamente tutti i miei progetti e le foto vengono mostrate con una qualità eccezionale senza rallentare la navigazione.',
       author: 'Raffaele',
@@ -351,22 +351,22 @@ export const projectDetails: Record<string, ProjectDetail> = {
     }
   },
 
-  'ilaria-Linktree': {
-    id: 'ilaria-Linktree',
+  'project-6': {
+    id: 'project-6',
     title: 'Ilaria UGC Linktree',
     subtitle: 'Linktree',
     description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
-    year: 2025,
+    year: 2026,
     client: 'Ilaria',
     url: 'https://ila.ravai.it/',
     category: 'Linktree',
-    
+
     businessGoals: [
       'Centralizzare vendita guide, coaching, affiliazioni e portfolio in un unico Linktree',
       'Gestione autonoma dei contenuti tramite pannello admin',
       'Creare una presenza online professionale per creator UGC'
     ],
-    
+
     features: [
       'Tab Best Selling, Free Guides, Blog, Portfolio con filtraggio lato frontend',
       'Card prodotti con CTA, prezzi range, layout immagine sinistra/destra',
@@ -376,13 +376,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'UI responsive con animazioni leggere (fade/scale) e SEO-friendly markup',
       'Preset Docker + Nginx + supervisord per serve frontend e API'
     ],
-    
+
     results: [
       'Web app full-stack completa e funzionante',
       'Gestione autonoma dei contenuti tramite pannello admin',
       'Deploy containerizzato con Docker e Nginx per alta disponibilità'
     ],
-    
+
     process: [
       {
         title: 'Raccolta Requisiti',
@@ -409,21 +409,98 @@ export const projectDetails: Record<string, ProjectDetail> = {
         description: 'Configurazione Docker con Nginx e supervisord per deploy containerizzato'
       }
     ],
-    
+
     mockups: [
       '/carouselMockup/linktree/1.png',
       '/carouselMockup/linktree/2.png',
       '/carouselMockup/linktree/3.png',
 
     ],
-    
+
     heroImage: '/carouselMockup/linktree/0.png',
-    
+
     testimonial: {
       text: 'La landing page linktree ha completamente trasformato il modo in cui gestisco i miei contenuti. Ora posso aggiungere e modificare prodotti autonomamente attraverso il pannello admin, e tutti i miei link sono centralizzati in un unico posto professionale.',
       author: 'Ilaria',
       role: 'Creator UGC'
     }
+  },
+  'project-7': {
+    id: 'project-7',
+    title: 'Nicola Calcabrini - Matematica Test Bocconi',
+    subtitle: 'Piattaforma E-learning',
+    description: 'Piattaforma full-stack per la preparazione al test Bocconi con sistema di preventivazione automatica, gestione corsi e area admin.',
+    year: 2026,
+    client: 'Nicola Calcabrini',
+    url: 'https://www.nicolacalcabrini.com/',
+    category: 'E-learning',
+
+    businessGoals: [
+      'Digitalizzare il metodo d\'insegnamento di Nicola Calcabrini in una piattaforma scalabile',
+      'Automatizzare il funnel di vendita tramite generazione istantanea di preventivi PDF',
+      'Fornire un\'esperienza di studio premium con video lezioni e simulazioni d\'esame reali',
+      'Centralizzare la gestione degli iscritti e delle richieste commerciali in un unico pannello'
+    ],
+
+    features: [
+      'E-learning Core: 80+ video lezioni, 900+ esercizi e simulazioni a tempo',
+      'Motore di Preventivazione: Calcolo dinamico prezzi, gestione coupon (es. MATEMATICA40) e sconti',
+      'Generazione PDF: Backend con PDFKit per la creazione automatica di preventivi personalizzati',
+      'Sistema Email: Integrazione con Resend per l\'invio automatico di documenti e notifiche admin',
+      'Admin Dashboard: Monitoraggio preventivi, stato delle email e gestione utenti',
+      'Performance & UI: Sviluppato con React 19, Vite e Tailwind CSS v4 per la massima velocità',
+      'Security: Autenticazione Robusta con JWT, Bcrypt e protezione delle rotte sensitive'
+    ],
+
+    results: [
+      'Piattaforma e-learning completa con transizione fluida tra marketing e didattica',
+      'Drastica riduzione dei tempi di gestione manuale grazie ai preventivi automatici',
+      'Infrastruttura solida basata su SQLite e Express capace di gestire centinaia di studenti'
+    ],
+
+    process: [
+      {
+        title: 'Analisi Didattica',
+        description: 'Strutturazione del percorso di studio in moduli: Algebra, Numeri, Geometria e Probabilità.'
+      },
+      {
+        title: 'Design del Sistema Brand',
+        description: 'Creazione di un\'identità visiva istituzionale e moderna, focalizzata sulla fiducia e sulla chiarezza.'
+      },
+      {
+        title: 'Sviluppo Motore Vendita',
+        description: 'Implementazione della logica di preventivazione lato server con generazione dinamica di PDFKit.'
+      },
+      {
+        title: 'Sviluppo Frontend React',
+        description: 'Costruzione dell\'interfaccia utente con componenti fluidi, animazioni Motion e gestione stato complessa.'
+      },
+      {
+        title: 'Integrazione API & Database',
+        description: 'Sviluppo backend Express con SQLite per una persistenza dati veloce e affidabile.'
+      },
+      {
+        title: 'Automation & Testing',
+        description: 'Configurazione dei flussi di notifica email e test delle simulazioni d\'esame per garantire precisione.'
+      }
+    ],
+
+    mockups: [
+      '/carouselMockup/nicola/1.png',
+      '/carouselMockup/nicola/2.png',
+      '/carouselMockup/nicola/3.png',
+      '/carouselMockup/nicola/4.png',
+      '/carouselMockup/nicola/5.png',
+    ],
+
+    heroImage: '/carouselMockup/nicola/0.png',
+
+    testimonial: {
+      text: 'La piattaforma ha automatizzato completamente il mio processo di vendita. Prima passavo ore a generare preventivi manualmente, ora il sistema fa tutto da solo, permettendomi di focalizzarmi solo sull\'insegnamento.',
+      author: 'Nicola Calcabrini',
+      role: 'Docente & Founder'
+    }
   }
+
 
 }; 

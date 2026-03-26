@@ -8,8 +8,7 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Prodotti', href: '/products' },
-    { name: 'About', href: '/about' },
+    { name: 'Chi Siamo', href: '/about' },
     { name: 'Contatti', href: '/contact' },
   ];
 
@@ -21,7 +20,9 @@ const Header = () => {
         '/': () => import('../pages/Projects'),
         '/products': () => import('../pages/Products'),
         '/about': () => import('../pages/About'),
-        '/contact': () => import('../pages/Contact')
+        '/contact': () => import('../pages/Contact'),
+        '/privacy': () => import('../pages/Privacy'),
+        '/terms': () => import('../pages/Terms')
       };
 
       const preloadFunc = routeMap[href];
@@ -74,7 +75,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -88,6 +89,13 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            <Link
+              to="/products"
+              onMouseEnter={() => handleLinkHover('/products')}
+              className="ml-auto bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition-colors text-md"
+            >
+              Calcola Prezzo
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -116,6 +124,13 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                to="/products"
+                className="bg-slate-900 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-slate-800 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Calcola Prezzo
+              </Link>
             </div>
           </div>
         )}

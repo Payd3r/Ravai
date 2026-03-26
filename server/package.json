@@ -1,0 +1,16 @@
+{
+  "name": "ravai-backend",
+  "version": "1.0.0",
+  "description": "Backend API per invio preventivi RAVAI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "pdfkit": "^0.15.0"
+  }
+}

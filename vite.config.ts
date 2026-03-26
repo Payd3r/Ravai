@@ -31,7 +31,16 @@ export default defineConfig({
   // Ottimizzazioni per il dev server
   server: {
     host: true,
-    port: 5173
+    port: 5173,
+    watch: {
+      usePolling: true
+    },
+    proxy: {
+      '/api': {
+        target: (globalThis as any).process?.env?.VITE_PROXY_TARGET ?? 'http://localhost:3000',
+        changeOrigin: true
+      }
+    }
   },
   
   // Preload delle dipendenze
