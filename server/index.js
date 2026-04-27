@@ -9,7 +9,7 @@ import dns from 'dns';
 dns.setDefaultResultOrder('ipv4first');
 
 import { generateQuotePdf } from './generatePdf.js';
-import { businessTypeLabels, packagePrices, packageNames, packageFeatures, extras } from './data.js';
+import { businessTypeLabels, packagePrices, packageNames, packageFeatures, extras, recurrings } from './data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -51,9 +51,22 @@ app.post('/api/send-quote', async (req, res) => {
     const extrasTotal = selectedExtras.reduce((sum, e) => sum + e.price, 0);
     const total = packagePrice + extrasTotal;
 
+    const selectedRecurrings = (config.recurring || [])
+      .map(id => recurrings.find(r => r.id === id))
+      .filter(Boolean);
+
+    const recurringItems = selectedRecurrings.map(r => ({
+      name: `${r.name} (Mensile)`,
+      priceText: `€${r.price}/mese`,
+      description: r.description
+    }));
+
     const extrasList = {
       packagePrice,
-      items: selectedExtras.map(e => ({ name: e.name, price: e.price, description: e.description }))
+      items: [
+        ...selectedExtras.map(e => ({ name: e.name, price: e.price, description: e.description })),
+        ...recurringItems
+      ]
     };
 
     const features = packageFeatures[config.package] || [];

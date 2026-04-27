@@ -3,15 +3,14 @@ import type { Project } from '../types/Project';
 export const projects: Project[] = [
   {
     id: 'project-1',
-    title: 'I Gladiatori',
-    subtitle: 'Pizzeria & Ristorante',
-    description: 'Una landing page moderna e responsive per un ristorante pizzeria con design accattivante e focus sulla conversione.',
-    image: '/cardCover/i_gladiatori.jpg',
-    year: 2025,
-    client: 'I Gladiatori',
-    url: 'https://gladiatori.andrea-mauri.duckdns.org/',
-    github: 'https://github.com/Payd3r/I-Gladiatori',
-    category: 'Pizzeria & Ristorante'
+    title: 'Corsi Test Bocconi',
+    subtitle: 'Piattaforma E-learning',
+    description: 'Piattaforma per la preparazione al test d\'ingresso Bocconi, con video lezioni, esercizi interattivi, simulazioni e pannello admin per la gestione utenti e contenuti.',
+    image: '/cardCover/nicola.jpg',
+    year: 2026,
+    client: 'Nicola Calcabrini',
+    url: 'https://www.nicolacalcabrini.com/',
+    category: 'E-learning'
   },
   {
     id: 'project-2',
@@ -63,28 +62,29 @@ export const projects: Project[] = [
   },
   {
     id: 'project-6',
-    title: 'Ilaria UGC Linktree',
-    subtitle: 'Linktree',
-    description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
-    image: '/cardCover/linktree.jpg',
+    title: 'Ilaria UGC Portfolio',
+    subtitle: 'UGC Creator & Strategist',
+    description: 'Portfolio professionale bilingue dedicato a una UGC Creator. Include una vetrina dinamica per i contenuti video, un sistema Linktree personalizzato e un pannello admin per la gestione completa di prodotti e affiliazioni.',
+    image: '/cardCover/ilariaugc.jpg',
     year: 2026,
-    client: 'Ilaria',
-    url: 'https://ila.ravai.it/',
+    client: 'Ilaria Gatti',
+    url: 'https://ilariaugc.net/',
     github: 'https://github.com/Payd3r/linktree',
-    category: 'Linktree'
+    category: 'UGC Portfolio'
   },
+
   {
     id: 'project-7',
-    title: 'Nicola Calcabrini - Matematica Test Bocconi',
-    subtitle: 'Piattaforma E-learning',
-    description: 'Piattaforma per la preparazione al test d\'ingresso Bocconi, con video lezioni, esercizi interattivi, simulazioni e pannello admin per la gestione utenti e contenuti.',
-    image: '/cardCover/nicola.jpg',
-    year: 2026,
-    client: 'Nicola Calcabrini',
-    url: 'https://www.nicolacalcabrini.com/',
-    category: 'E-learning'
+    title: 'I Gladiatori',
+    subtitle: 'Pizzeria & Ristorante',
+    description: 'Una landing page moderna e responsive per un ristorante pizzeria con design accattivante e focus sulla conversione.',
+    image: '/cardCover/i_gladiatori.jpg',
+    year: 2025,
+    client: 'I Gladiatori',
+    url: 'https://gladiatori.andrea-mauri.duckdns.org/',
+    github: 'https://github.com/Payd3r/I-Gladiatori',
+    category: 'Pizzeria & Ristorante'
   }
-
 
 ];
 
@@ -115,9 +115,9 @@ export const categories = [
     description: 'Fotografia'
   },
   {
-    id: 'Linktree',
-    name: 'Linktree',
-    description: 'Linktree'
+    id: 'UGC Portfolio',
+    name: 'UGC Portfolio',
+    description: 'UGC Portfolio'
   },
   {
     id: 'E-learning',

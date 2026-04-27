@@ -11,12 +11,12 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   // Mappa per le immagini delle card (fallback)
   const getCardImage = (projectId: string) => {
     const imageMap: Record<string, string> = {
-      'project-1': '/cardCover/i_gladiatori.jpg',
+      'project-1': '/cardCover/nicola.jpg',
       'project-2': '/cardCover/betta47.jpg',
       'project-3': '/cardCover/le_chic.jpg',
       'project-4': '/cardCover/la_lariana.jpg',
       'project-5': '/cardCover/faraostudio.jpg',
-      'project-6': '/cardCover/linktree.jpg',
+      'project-6': '/cardCover/ilariaugc.jpg',
     };
     return imageMap[projectId] || null;
   };

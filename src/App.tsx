@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import SmoothScroll from './components/SmoothScroll';
 
 // Lazy loading dei componenti per migliorare le prestazioni
 const Projects = lazy(() => import('./pages/Projects'));
@@ -26,12 +27,9 @@ function AppContent() {
   const location = useLocation();
   const hideFooter = location.pathname === '/products';
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
   return (
     <div className="flex flex-col min-h-screen">
+      <SmoothScroll />
       <Header />
       <main className="flex-grow flex flex-col">
         <Suspense fallback={<PageLoader />}>
@@ -44,11 +42,6 @@ function AppContent() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-            {/* Route speciali per URL con parametri di esclusione */}
-            <Route path="/asnd1acnk" element={<Projects />} /> {/* Esclude I Gladiatori */}
-            <Route path="/bnt2xcvb" element={<Projects />} /> {/* Esclude Betta47 */}
-            <Route path="/clm3qwer" element={<Projects />} /> {/* Esclude Le Chic */}
-            <Route path="/dlr4tyui" element={<Projects />} /> {/* Esclude La Lariana */}
           </Routes>
         </Suspense>
       </main>

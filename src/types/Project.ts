@@ -8,7 +8,7 @@ export interface Project {
   client?: string;
   url?: string;
   github?: string;
-  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico' | 'Fotografia' | 'Linktree' | 'E-learning';
+  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico' | 'Fotografia' | 'UGC Portfolio' | 'E-learning';
 }
 
 export interface ProjectCategory {

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import type { ProductConfig, BusinessType, Package, Extra } from '../../types/configurator';
+import type { ProductConfig, BusinessType, Package, Extra, Recurring } from '../../types/configurator';
 
 interface Step4Props {
     config: ProductConfig;
     businessTypes: BusinessType[];
     getPackagesForType: (type: string) => Package[];
     extras: Extra[];
+    recurrings: Recurring[];
     calculateTotal: () => number;
+    calculateRecurringTotal: () => number;
     quoteSuccess: boolean;
     quoteError: string | null;
     emailInput: string;
@@ -23,7 +25,9 @@ const Step4: React.FC<Step4Props> = ({
     businessTypes,
     getPackagesForType,
     extras,
+    recurrings,
     calculateTotal,
+    calculateRecurringTotal,
     quoteSuccess,
     quoteError,
     emailInput,
@@ -63,9 +67,25 @@ const Step4: React.FC<Step4Props> = ({
                             <h5 className="font-bold text-slate-900 text-sm sm:text-base">Pacchetto {selectedPackage.name}</h5>
                             <span className="text-base sm:text-lg font-bold text-slate-900">€{selectedPackage.price}</span>
                         </div>
-                        <div className="mt-2 p-2 bg-green-50 rounded-lg border border-green-200">
-                            <p className="text-xs text-green-700 font-medium">Primi 6 mesi di hosting e dominio GRATIS (valore €25.00)</p>
+                    </div>
+                )}
+
+                {config.recurring && config.recurring.length > 0 && (
+                    <div className="border-b border-slate-200 pb-3 sm:pb-4 mb-3 sm:mb-4">
+                        <h5 className="font-bold text-slate-900 mb-2 sm:mb-3 text-xs sm:text-sm">Servizi ricorrenti mensili</h5>
+                        <div className="space-y-1.5 sm:space-y-2">
+                            {recurrings.filter(r => config.recurring.includes(r.id)).map(rec => (
+                                <div key={rec.id} className="flex items-center justify-between">
+                                    <span className="text-slate-600 text-xs sm:text-sm pr-2">{rec.name}</span>
+                                    <span className="font-semibold text-slate-900 text-xs sm:text-sm flex-shrink-0">€{rec.price}/mese</span>
+                                </div>
+                            ))}
                         </div>
+                        {config.recurring.includes('hosting') && (
+                            <div className="mt-3 p-2 bg-slate-50 rounded-lg border border-slate-200">
+                                <p className="text-xs text-slate-700 font-medium">I Primi 6 mesi di hosting sono gratuiti!</p>
+                            </div>
+                        )}
                     </div>
                 )}
 
@@ -76,7 +96,9 @@ const Step4: React.FC<Step4Props> = ({
                             {selectedExtras.map((extra) => (
                                 <div key={extra.id} className="flex items-center justify-between">
                                     <span className="text-slate-600 text-xs sm:text-sm pr-2">{extra.name}</span>
-                                    <span className="font-semibold text-slate-900 text-xs sm:text-sm flex-shrink-0">€{extra.price}</span>
+                                    <span className="font-semibold text-slate-900 text-xs sm:text-sm flex-shrink-0">
+                                        {extra.price === 0 && extra.id === 'social-management' ? 'Da accordare' : `€${extra.price}`}
+                                    </span>
                                 </div>
                             ))}
                         </div>
@@ -84,10 +106,16 @@ const Step4: React.FC<Step4Props> = ({
                 )}
 
                 <div className="text-center mb-4 sm:mb-6">
-                    <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-slate-900">
-                        <span>Totale</span>
+                    <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                        <span>Totale una tantum</span>
                         <span>€{total}</span>
                     </div>
+                    {calculateRecurringTotal() > 0 && (
+                        <div className="flex items-center justify-between text-base sm:text-lg font-bold text-slate-700">
+                            <span>Totale mensile</span>
+                            <span>€{calculateRecurringTotal()}/mese</span>
+                        </div>
+                    )}
                 </div>
 
                 <div className="space-y-3 text-center">

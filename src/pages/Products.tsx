@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import type { ProductConfig } from '../types/configurator';
-import { businessTypes, getPackagesForType, extras } from '../data/configurator';
+import { businessTypes, getPackagesForType, extras, recurrings } from '../data/configurator';
 import Step1 from '../components/Configurator/Step1';
 import Step2 from '../components/Configurator/Step2';
 import Step3 from '../components/Configurator/Step3';
@@ -15,6 +15,7 @@ const sessionState = {
     businessType: null,
     package: null,
     extras: [],
+    recurring: ['hosting'],
     email: ''
   } as ProductConfig,
   emailInput: '',
@@ -100,6 +101,14 @@ const Products = () => {
     return packagePrice + extrasPrice;
   };
 
+  const calculateRecurringTotal = () => {
+    if (!config.recurring) return 0;
+    return config.recurring.reduce((total, reqId) => {
+      const rec = recurrings.find(r => r.id === reqId);
+      return total + (rec?.price || 0);
+    }, 0);
+  };
+
   // Navigation functions
   const nextStep = () => {
     if (currentStep < 4) setCurrentStep(currentStep + 1);
@@ -132,7 +141,8 @@ const Products = () => {
             customerName: config.customerName,
             businessType: config.businessType,
             package: config.package,
-            extras: config.extras
+            extras: config.extras,
+            recurring: config.recurring
           },
           email: emailToUse
         })
@@ -159,6 +169,7 @@ const Products = () => {
             config={config}
             setConfig={setConfig}
             extras={extras}
+            recurrings={recurrings}
             expandedExtra={expandedExtra}
             setExpandedExtra={setExpandedExtra}
           />
@@ -170,7 +181,9 @@ const Products = () => {
             businessTypes={businessTypes}
             getPackagesForType={getPackagesForType}
             extras={extras}
+            recurrings={recurrings}
             calculateTotal={calculateTotal}
+            calculateRecurringTotal={calculateRecurringTotal}
             quoteSuccess={quoteSuccess}
             quoteError={quoteError}
             emailInput={emailInput}
@@ -204,8 +217,14 @@ const Products = () => {
               {[1, 2, 3, 4].map((step) => (
                 <div
                   key={step}
+                  onClick={() => {
+                    if (step < currentStep) {
+                      setCurrentStep(step);
+                    }
+                  }}
                   className={`
                     w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold transition-all duration-300
+                    ${step < currentStep ? 'cursor-pointer hover:bg-slate-700 hover:text-white' : ''}
                     ${currentStep >= step
                       ? 'bg-slate-900 text-white'
                       : 'bg-slate-200 text-slate-500'
