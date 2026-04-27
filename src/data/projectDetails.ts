@@ -3,73 +3,78 @@ import type { ProjectDetail } from '../types/ProjectDetail';
 export const projectDetails: Record<string, ProjectDetail> = {
   'project-1': {
     id: 'project-1',
-    title: 'I Gladiatori',
-    subtitle: 'Pizzeria & Ristorante',
-    description: 'Una landing page moderna e responsive per un ristorante pizzeria con design accattivante e focus sulla conversione.',
-    year: 2025,
-    client: 'I Gladiatori',
-    url: 'https://gladiatori.andrea-mauri.duckdns.org/',
-    category: 'Pizzeria & Ristorante',
+    title: 'Nicola Calcabrini - Matematica Test Bocconi',
+    subtitle: 'Piattaforma E-learning',
+    description: 'Piattaforma full-stack per la preparazione al test Bocconi con sistema di preventivazione automatica, gestione corsi e area admin.',
+    year: 2026,
+    client: 'Nicola Calcabrini',
+    url: 'https://www.nicolacalcabrini.com/',
+    category: 'E-learning',
 
-    // Informazioni business
     businessGoals: [
-      'Migliorare la visibilità del ristorante',
-      'Facilitare la visualizzazione del menu tramite smartphone',
-      'Creare un\'esperienza digitale coinvolgente'
+      'Digitalizzare il metodo d\'insegnamento di Nicola Calcabrini in una piattaforma scalabile',
+      'Automatizzare il funnel di vendita tramite generazione istantanea di preventivi PDF',
+      'Fornire un\'esperienza di studio premium con video lezioni e simulazioni d\'esame reali',
+      'Centralizzare la gestione degli iscritti e delle richieste commerciali in un unico pannello'
     ],
 
-    // Caratteristiche principali (focus business)
     features: [
-      'Menu digitale per ogni tipo (pizzeria, pizzeria asporto, ristorante)',
-      'Filtri per tipi di ingredienti e allergeni',
-      'Galleria foto per ogni articolo',
-      'Design responsive ottimizzato per mobile',
-      'Presentazione online del ristorante/pizzeria',
-      'Sito statico per visualizzazione menu'
+      'E-learning Core: 80+ video lezioni, 900+ esercizi e simulazioni a tempo',
+      'Motore di Preventivazione: Calcolo dinamico prezzi, gestione coupon (es. MATEMATICA40) e sconti',
+      'Generazione PDF: Backend con PDFKit per la creazione automatica di preventivi personalizzati',
+      'Sistema Email: Integrazione con Resend per l\'invio automatico di documenti e notifiche admin',
+      'Admin Dashboard: Monitoraggio preventivi, stato delle email e gestione utenti',
+      'Performance & UI: Sviluppato con React 19, Vite e Tailwind CSS v4 per la massima velocità',
+      'Security: Autenticazione Robusta con JWT, Bcrypt e protezione delle rotte sensitive'
     ],
 
-    // Risultati ottenuti
     results: [
-      'Sito completamente rinnovato e moderno',
-      'Miglioramento significativo dell\'usabilità',
-      'Design responsive per tutti i dispositivi'
+      'Piattaforma e-learning completa con transizione fluida tra marketing e didattica',
+      'Drastica riduzione dei tempi di gestione manuale grazie ai preventivi automatici',
+      'Infrastruttura solida basata su SQLite e Express capace di gestire centinaia di studenti'
     ],
 
-    // Processo di lavoro
     process: [
       {
-        title: 'Analisi del Sito Esistente',
-        description: 'Valutazione del sito vecchio e identificazione dei problemi principali'
+        title: 'Analisi Didattica',
+        description: 'Strutturazione del percorso di studio in moduli: Algebra, Numeri, Geometria e Probabilità.'
       },
       {
-        title: 'Design e Prototipazione',
-        description: 'Creazione di mockup moderni e responsive per sostituire il design datato'
+        title: 'Design del Sistema Brand',
+        description: 'Creazione di un\'identità visiva istituzionale e moderna, focalizzata sulla fiducia e sulla chiarezza.'
       },
       {
-        title: 'Sviluppo Frontend',
-        description: 'Implementazione del nuovo sito con focus su usabilità e design moderno'
+        title: 'Sviluppo Motore Vendita',
+        description: 'Implementazione della logica di preventivazione lato server con generazione dinamica di PDFKit.'
       },
       {
-        title: 'Ottimizzazione e Test',
-        description: 'Test su diversi dispositivi e ottimizzazione delle performance'
+        title: 'Sviluppo Frontend React',
+        description: 'Costruzione dell\'interfaccia utente con componenti fluidi, animazioni Motion e gestione stato complessa.'
+      },
+      {
+        title: 'Integrazione API & Database',
+        description: 'Sviluppo backend Express con SQLite per una persistenza dati veloce e affidabile.'
+      },
+      {
+        title: 'Automation & Testing',
+        description: 'Configurazione dei flussi di notifica email e test delle simulazioni d\'esame per garantire precisione.'
       }
     ],
 
-    // Mockups (percorsi delle immagini)
     mockups: [
-      '/carouselMockup/I_Gladiatori/1.png',
-      '/carouselMockup/I_Gladiatori/2.png',
-      '/carouselMockup/I_Gladiatori/3.png',
+      '/carouselMockup/nicola/1.png',
+      '/carouselMockup/nicola/2.png',
+      '/carouselMockup/nicola/3.png',
+      '/carouselMockup/nicola/4.png',
+      '/carouselMockup/nicola/5.png',
     ],
 
-    // Immagine di sfondo per la hero section
-    heroImage: '/carouselMockup/I_Gladiatori/0.png',
+    heroImage: '/carouselMockup/nicola/0.png',
 
-    // Testimonianza cliente
     testimonial: {
-      text: 'Il nuovo sito ha completamente trasformato la nostra presenza online. Ora i clienti possono facilmente visualizzare il menu anche da smartphone e l\'esperienza è molto più professionale.',
-      author: 'Marco Rossi',
-      role: 'Proprietario I Gladiatori'
+      text: 'La piattaforma ha automatizzato completamente il mio processo di vendita. Prima passavo ore a generare preventivi manualmente, ora il sistema fa tutto da solo, permettendomi di focalizzarmi solo sull\'insegnamento.',
+      author: 'Nicola Calcabrini',
+      role: 'Docente & Founder'
     }
   },
 
@@ -353,154 +358,142 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   'project-6': {
     id: 'project-6',
-    title: 'Ilaria UGC Linktree',
-    subtitle: 'Linktree',
-    description: 'Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.',
+    title: 'Ilaria Gatti Portfolio',
+    subtitle: 'UGC Creator & Strategist',
+    description: 'Portfolio professionale bilingue dedicato a una UGC Creator. Un ecosistema completo che unisce showcase video, una sezione Linktree per le affiliazioni e un pannello di controllo per la gestione dinamica dei contenuti.',
     year: 2026,
-    client: 'Ilaria',
-    url: 'https://ila.ravai.it/',
-    category: 'Linktree',
+    client: 'Ilaria Gatti',
+    url: 'https://ilariaugc.net/',
+    category: 'UGC Portfolio',
 
     businessGoals: [
-      'Centralizzare vendita guide, coaching, affiliazioni e portfolio in un unico Linktree',
-      'Gestione autonoma dei contenuti tramite pannello admin',
-      'Creare una presenza online professionale per creator UGC'
+      'Presentare un portfolio bilingue (IT/EN) per clienti internazionali',
+      'Centralizzare link, prodotti Gumroad e video UGC in un unico hub',
+      'Gestire in autonomia affiliazioni e contenuti tramite area admin riservata'
     ],
 
     features: [
-      'Tab Best Selling, Free Guides, Blog, Portfolio con filtraggio lato frontend',
-      'Card prodotti con CTA, prezzi range, layout immagine sinistra/destra',
-      'Pannello admin per creazione/modifica/eliminazione prodotti',
-      'Upload immagini con Multer e salvataggio in /public/uploads',
-      'Validazione payload lato backend e gestione file JSON robusta',
-      'UI responsive con animazioni leggere (fade/scale) e SEO-friendly markup',
-      'Preset Docker + Nginx + supervisord per serve frontend e API'
+      'Portfolio bilingue con sistema di localizzazione IT/EN personalizzato',
+      'Showcase dinamica per video UGC con categorizzazione e anteprime',
+      'Linktree custom integrato con Gumroad per la vendita di guide e coaching',
+      'Pannello Admin per la gestione CRUD di prodotti, categorie e link',
+      'Design responsive e moderno ottimizzato per la conversione e i social'
     ],
 
     results: [
-      'Web app full-stack completa e funzionante',
-      'Gestione autonoma dei contenuti tramite pannello admin',
-      'Deploy containerizzato con Docker e Nginx per alta disponibilità'
+      'Presenza online professionale e internazionale per una top UGC creator',
+      'Pieno controllo editoriale sui link e prodotti consigliati',
+      'Ottimizzazione dei flussi di conversione dai social al portfolio'
     ],
 
     process: [
       {
-        title: 'Raccolta Requisiti',
-        description: 'Analisi delle esigenze della creator UGC per centralizzare tutti i link in un\'unica landing page'
+        title: 'Analisi Strategica',
+        description: 'Definizione dell\'architettura bilingue per supportare la crescita nel mercato internazionale.'
       },
       {
-        title: 'UI/UX Design',
-        description: 'Progettazione dell\'interfaccia con tab dinamiche e card prodotti personalizzabili'
+        title: 'Sviluppo Sistema Multi-lingua',
+        description: 'Implementazione della logica di switch lingua e gestione dei contenuti localizzati.'
       },
       {
-        title: 'API Express + Storage JSON',
-        description: 'Sviluppo del backend con Express, validazione payload e gestione file JSON per persistenza dati'
+        title: 'Integrazione Linktree & CMS',
+        description: 'Sviluppo del backend per la gestione dinamica della pagina links e del portfolio video.'
       },
       {
-        title: 'Frontend Vite/Tailwind',
-        description: 'Implementazione frontend React/TypeScript con Vite e Tailwind CSS per UI responsive'
+        title: 'UI/UX Design & Video-player',
+        description: 'Progettazione di un layout focalizzato sul video contenuto e facilità di navigazione.'
       },
       {
-        title: 'Upload & Admin Panel',
-        description: 'Sviluppo del pannello admin per CRUD prodotti con upload immagini tramite Multer'
-      },
-      {
-        title: 'Docker/Nginx Deploy',
-        description: 'Configurazione Docker con Nginx e supervisord per deploy containerizzato'
+        title: 'Deploy & Ottimizzazione SEO',
+        description: 'Messa online su dominio dedicato con ottimizzazione dei metadata per i motori di ricerca.'
       }
     ],
 
     mockups: [
-      '/carouselMockup/linktree/1.png',
-      '/carouselMockup/linktree/2.png',
-      '/carouselMockup/linktree/3.png',
-
+      '/carouselMockup/ilariaugc/1.png',
+      '/carouselMockup/ilariaugc/2.png',
+      '/carouselMockup/ilariaugc/4.png',
     ],
 
-    heroImage: '/carouselMockup/linktree/0.png',
+    heroImage: '/carouselMockup/ilariaugc/0.png',
 
     testimonial: {
-      text: 'La landing page linktree ha completamente trasformato il modo in cui gestisco i miei contenuti. Ora posso aggiungere e modificare prodotti autonomamente attraverso il pannello admin, e tutti i miei link sono centralizzati in un unico posto professionale.',
-      author: 'Ilaria',
-      role: 'Creator UGC'
+      text: 'Il nuovo portfolio bilingue è esattamente quello di cui avevo bisogno per lavorare con brand internazionali. Posso gestire tutto in autonomia e la velocità del sito è impressionante.',
+      author: 'Ilaria Gatti',
+      role: 'UGC Creator & Strategist'
     }
-  },
-  'project-7': {
+  }, 'project-7': {
     id: 'project-7',
-    title: 'Nicola Calcabrini - Matematica Test Bocconi',
-    subtitle: 'Piattaforma E-learning',
-    description: 'Piattaforma full-stack per la preparazione al test Bocconi con sistema di preventivazione automatica, gestione corsi e area admin.',
-    year: 2026,
-    client: 'Nicola Calcabrini',
-    url: 'https://www.nicolacalcabrini.com/',
-    category: 'E-learning',
+    title: 'I Gladiatori',
+    subtitle: 'Pizzeria & Ristorante',
+    description: 'Una landing page moderna e responsive per un ristorante pizzeria con design accattivante e focus sulla conversione.',
+    year: 2025,
+    client: 'I Gladiatori',
+    url: 'https://gladiatori.andrea-mauri.duckdns.org/',
+    category: 'Pizzeria & Ristorante',
 
+    // Informazioni business
     businessGoals: [
-      'Digitalizzare il metodo d\'insegnamento di Nicola Calcabrini in una piattaforma scalabile',
-      'Automatizzare il funnel di vendita tramite generazione istantanea di preventivi PDF',
-      'Fornire un\'esperienza di studio premium con video lezioni e simulazioni d\'esame reali',
-      'Centralizzare la gestione degli iscritti e delle richieste commerciali in un unico pannello'
+      'Migliorare la visibilità del ristorante',
+      'Facilitare la visualizzazione del menu tramite smartphone',
+      'Creare un\'esperienza digitale coinvolgente'
     ],
 
+    // Caratteristiche principali (focus business)
     features: [
-      'E-learning Core: 80+ video lezioni, 900+ esercizi e simulazioni a tempo',
-      'Motore di Preventivazione: Calcolo dinamico prezzi, gestione coupon (es. MATEMATICA40) e sconti',
-      'Generazione PDF: Backend con PDFKit per la creazione automatica di preventivi personalizzati',
-      'Sistema Email: Integrazione con Resend per l\'invio automatico di documenti e notifiche admin',
-      'Admin Dashboard: Monitoraggio preventivi, stato delle email e gestione utenti',
-      'Performance & UI: Sviluppato con React 19, Vite e Tailwind CSS v4 per la massima velocità',
-      'Security: Autenticazione Robusta con JWT, Bcrypt e protezione delle rotte sensitive'
+      'Menu digitale per ogni tipo (pizzeria, pizzeria asporto, ristorante)',
+      'Filtri per tipi di ingredienti e allergeni',
+      'Galleria foto per ogni articolo',
+      'Design responsive ottimizzato per mobile',
+      'Presentazione online del ristorante/pizzeria',
+      'Sito statico per visualizzazione menu'
     ],
 
+    // Risultati ottenuti
     results: [
-      'Piattaforma e-learning completa con transizione fluida tra marketing e didattica',
-      'Drastica riduzione dei tempi di gestione manuale grazie ai preventivi automatici',
-      'Infrastruttura solida basata su SQLite e Express capace di gestire centinaia di studenti'
+      'Sito completamente rinnovato e moderno',
+      'Miglioramento significativo dell\'usabilità',
+      'Design responsive per tutti i dispositivi'
     ],
 
+    // Processo di lavoro
     process: [
       {
-        title: 'Analisi Didattica',
-        description: 'Strutturazione del percorso di studio in moduli: Algebra, Numeri, Geometria e Probabilità.'
+        title: 'Analisi del Sito Esistente',
+        description: 'Valutazione del sito vecchio e identificazione dei problemi principali'
       },
       {
-        title: 'Design del Sistema Brand',
-        description: 'Creazione di un\'identità visiva istituzionale e moderna, focalizzata sulla fiducia e sulla chiarezza.'
+        title: 'Design e Prototipazione',
+        description: 'Creazione di mockup moderni e responsive per sostituire il design datato'
       },
       {
-        title: 'Sviluppo Motore Vendita',
-        description: 'Implementazione della logica di preventivazione lato server con generazione dinamica di PDFKit.'
+        title: 'Sviluppo Frontend',
+        description: 'Implementazione del nuovo sito con focus su usabilità e design moderno'
       },
       {
-        title: 'Sviluppo Frontend React',
-        description: 'Costruzione dell\'interfaccia utente con componenti fluidi, animazioni Motion e gestione stato complessa.'
-      },
-      {
-        title: 'Integrazione API & Database',
-        description: 'Sviluppo backend Express con SQLite per una persistenza dati veloce e affidabile.'
-      },
-      {
-        title: 'Automation & Testing',
-        description: 'Configurazione dei flussi di notifica email e test delle simulazioni d\'esame per garantire precisione.'
+        title: 'Ottimizzazione e Test',
+        description: 'Test su diversi dispositivi e ottimizzazione delle performance'
       }
     ],
 
+    // Mockups (percorsi delle immagini)
     mockups: [
-      '/carouselMockup/nicola/1.png',
-      '/carouselMockup/nicola/2.png',
-      '/carouselMockup/nicola/3.png',
-      '/carouselMockup/nicola/4.png',
-      '/carouselMockup/nicola/5.png',
+      '/carouselMockup/I_Gladiatori/1.png',
+      '/carouselMockup/I_Gladiatori/2.png',
+      '/carouselMockup/I_Gladiatori/3.png',
     ],
 
-    heroImage: '/carouselMockup/nicola/0.png',
+    // Immagine di sfondo per la hero section
+    heroImage: '/carouselMockup/I_Gladiatori/0.png',
 
+    // Testimonianza cliente
     testimonial: {
-      text: 'La piattaforma ha automatizzato completamente il mio processo di vendita. Prima passavo ore a generare preventivi manualmente, ora il sistema fa tutto da solo, permettendomi di focalizzarmi solo sull\'insegnamento.',
-      author: 'Nicola Calcabrini',
-      role: 'Docente & Founder'
+      text: 'Il nuovo sito ha completamente trasformato la nostra presenza online. Ora i clienti possono facilmente visualizzare il menu anche da smartphone e l\'esperienza è molto più professionale.',
+      author: 'Marco Rossi',
+      role: 'Proprietario I Gladiatori'
     }
   }
+
 
 
 }; 

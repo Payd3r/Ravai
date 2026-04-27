@@ -3,14 +3,30 @@ export const businessTypeLabels = {
   airbnb: 'Airbnb / Casa Vacanze',
   restaurant: 'Ristoranti / Pizzerie / Bar',
   beauty: 'Estetiste / Parrucchieri',
-  workshop: 'Officina / Libero Professionista'
+  workshop: 'Officina / Libero Professionista',
+  ecommerce: 'E-commerce / Vendita al dettaglio',
+  fitness: 'Palestre / Personal Trainer',
+  consulting: 'Consulenti / Agenzie',
+  medical: 'Medici / Cliniche',
+  construction: 'Impresa Edile / Artigiani',
+  'real-estate': 'Agenzie Immobiliari',
+  education: 'Scuole / Corsi',
+  photography: 'Fotografi / Videomaker'
 };
 
 export const packagePrices = {
-  airbnb: { base: 297, pro: 397, premium: 597 },
-  restaurant: { base: 297, pro: 397, premium: 420 },
-  beauty: { base: 297, pro: 397, premium: 420 },
-  workshop: { base: 297, pro: 397, premium: 420 }
+  airbnb: { base: 297, pro: 447, premium: 647 },
+  restaurant: { base: 297, pro: 447, premium: 470 },
+  beauty: { base: 297, pro: 447, premium: 470 },
+  workshop: { base: 297, pro: 447, premium: 470 },
+  ecommerce: { base: 297, pro: 447, premium: 470 },
+  fitness: { base: 297, pro: 447, premium: 470 },
+  consulting: { base: 297, pro: 447, premium: 470 },
+  medical: { base: 297, pro: 447, premium: 470 },
+  construction: { base: 297, pro: 447, premium: 470 },
+  'real-estate': { base: 297, pro: 447, premium: 470 },
+  education: { base: 297, pro: 447, premium: 470 },
+  photography: { base: 297, pro: 447, premium: 470 }
 };
 
 export const packageNames = {
@@ -29,9 +45,7 @@ export const packageFeatures = {
     'Integrazione Google Maps',
     'Form contatto',
     'WhatsApp button',
-    '1 revisione inclusa',
-    'Hosting e dominio (15€/anno)',
-    'Primi 6 mesi di hosting GRATIS!'
+    '1 revisione inclusa'
   ],
   pro: [
     'Tutto dello START',
@@ -40,23 +54,19 @@ export const packageFeatures = {
     'Sistema prenotazioni',
     'Integrazione recensioni Google',
     'Setup base Instagram professionale',
-    'Mini strategia contenuti 30 giorni',
-    'Hosting e dominio (15€/anno)',
-    'Primi 6 mesi di hosting GRATIS!'
+    'Mini strategia contenuti 30 giorni'
   ],
   premium: [
     'Tutto del PRO',
     'Funnel email base',
     'SEO incentrata per AI',
     'Report performance 60 giorni',
-    '1 mese gestione social incluso',
-    'Hosting e dominio (15€/anno)',
-    'Primi 6 mesi di hosting GRATIS!'
+    '1 mese gestione social incluso'
   ]
 };
 
 export const extras = [
-  { id: 'extra-pages', name: 'Pagine aggiuntive', price: 30, description: 'Aggiunta di una pagina personalizzata con struttura strategica e ottimizzazione mobile.' },
+  { id: 'extra-pages', name: 'Pagine aggiuntive', price: 70, description: 'Aggiunta di una pagina personalizzata con struttura strategica e ottimizzazione mobile.' },
   { id: 'translations', name: 'Traduzioni professionali', price: 50, description: 'Traduzione professionale dei contenuti con adattamento linguistico per il mercato locale.' },
   { id: 'ecommerce', name: 'Sistema e-commerce', price: 200, description: 'Integrazione completa per vendita online con carrello, pagamenti sicuri e gestione prodotti.' },
   { id: 'marketing-kit', name: 'Kit Marketing Completo', price: 120, description: 'Setup strategico: bio ottimizzata, link strategico, CTA e struttura promozionale.' },
@@ -65,8 +75,15 @@ export const extras = [
   { id: 'logo', name: 'Logo professionale', price: 40, description: 'Creazione logo personalizzato con studio del settore e 2 revisioni incluse.' },
   { id: 'business-cards', name: 'Biglietti da visita', price: 90, description: 'Design coordinato con il brand, pronto per stampa professionale.' },
   { id: 'brand-kit', name: 'Brand Identity Kit', price: 190, description: 'Palette colori, font, linee guida visive, elementi grafici e mini brand book.' },
-  { id: 'video-testimonials', name: 'Gestione Social', price: 0, description: 'Produzione e montaggio video, creazione di post e gestione della community.' },
+  { id: 'social-management', name: 'Gestione Social', price: 0, description: 'Produzione e montaggio video, creazione di post e gestione della community.' },
   { id: 'video-promo', name: 'Content Creation (Pacchetto)', price: 450, description: 'Produzione di 3 contenuti video ottimizzati per social media con CTA.' }
+];
+
+export const recurrings = [
+  { id: 'hosting', name: 'Hosting e Dominio', price: 12, description: 'Primi 6 mesi gratis, necessario per mantenere il sito online e sicuro.' },
+  { id: 'maintenance', name: 'Manutenzione mensile', price: 19, description: 'Aggiornamenti, backup, piccole modifiche per mantenere il sito sempre perfetto.' },
+  { id: 'gmb-management', name: 'Gestione Google My Business', price: 19, description: 'Molto richiesta dalle attività locali. Ottimizzazione mensile della scheda per la SEO locale.' },
+  { id: 'seo-report', name: 'Report SEO mensile', price: 5, description: 'Per chi vuole monitorare costantemente i risultati di ricerca.' }
 ];
 
 // Info di contatto per il PDF

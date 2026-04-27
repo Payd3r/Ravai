@@ -1,4 +1,4 @@
-export type BusinessTypeId = 'airbnb' | 'restaurant' | 'beauty' | 'workshop';
+export type BusinessTypeId = 'airbnb' | 'restaurant' | 'beauty' | 'workshop' | 'ecommerce' | 'fitness' | 'consulting' | 'medical' | 'construction' | 'real-estate' | 'education' | 'photography';
 export type PackageId = 'base' | 'pro' | 'premium';
 
 export interface ProductConfig {
@@ -6,13 +6,13 @@ export interface ProductConfig {
     businessType: BusinessTypeId | null;
     package: PackageId | null;
     extras: string[];
+    recurring: string[];
     email: string;
 }
 
 export interface BusinessType {
     id: BusinessTypeId;
     title: string;
-    emoji: string;
     icon: any;
     description: string;
     color: string;
@@ -34,4 +34,12 @@ export interface Extra {
     price: number;
     category: 'web' | 'marketing' | 'branding' | 'content';
     description: string;
+}
+
+export interface Recurring {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+    isRequired?: boolean;
 }

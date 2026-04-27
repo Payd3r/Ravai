@@ -3,15 +3,10 @@ import { projects } from '../data/projects';
 import ProjectCard from '../components/ProjectCard';
 import type { Project } from '../types/Project';
 import { Code, Users, Clock, Award, Layout, PenTool, Zap, MapPin, Search, Send } from 'lucide-react';
-import { useCardExclusion } from '../hooks/useCardExclusion';
 import FAQ from '../components/FAQ';
 
 const Projects = () => {
   const navigate = useNavigate();
-  const { filterExcludedProjects } = useCardExclusion();
-
-  // Filtra i progetti escludendo quelli specificati nell'URL
-  const filteredProjects = filterExcludedProjects(projects);
 
   const handleProjectClick = (project: Project) => {
     navigate(`/projects/${project.id}`);
@@ -33,7 +28,7 @@ const Projects = () => {
           <div className="flex flex-wrap justify-center gap-6 text-slate-600 mb-8">
             <div className="flex items-center gap-2">
               <Code className="w-5 h-5 text-slate-900" />
-              <span><strong className="text-slate-900">{filteredProjects.length}</strong> Progetti completati</span>
+              <span><strong className="text-slate-900">{projects.length}</strong> Progetti completati</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-5 h-5 text-slate-900" />
@@ -64,7 +59,7 @@ const Projects = () => {
             I Nostri progetti
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard
                 key={project.id}
                 project={project}

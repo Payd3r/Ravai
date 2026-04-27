@@ -68,7 +68,7 @@ const About = () => {
       name: 'Ilaria Gatti',
       role: 'Marketing & Strategy',
       image: '/team/ilaria.jpeg',
-      description: 'Laurea 110 e Lode in Economics & Management alla Bocconi. Due anni in agenzia marketing lavorando con oltre {{400+ brand}} nella creazione di contenuti. Oggi crea contenuti di viaggio per una community di oltre {{14.000 persone}}. \n{{Strategia}}, comunicazione e posizionamento sono ciò che trasformano un sito in uno strumento che {{porta clienti}}.',
+      description: 'Laurea 110 e Lode in Economics & Management alla Bocconi. Due anni in agenzia marketing lavorando con oltre {{400+ brand}} nella creazione di contenuti. Oggi crea contenuti di viaggio per una community di oltre {{16.000 persone}}. \n{{Strategia}}, comunicazione e posizionamento sono ciò che trasformano un sito in uno strumento che {{porta clienti}}.',
       skills: ['Fotografia', 'Copywriting', 'Social Media', 'Branding'],
       portfolio: 'https://ilariaugc.net/',
       instagram: 'https://www.instagram.com/ilariaugc/'

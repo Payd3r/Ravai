@@ -212,9 +212,9 @@ export function generateQuotePdf(config, packageName, categoryLabel, extrasList,
         const rowY = y + 42 + i * 26;
         doc.fillColor(COLORS.secondary).fontSize(10).font('Helvetica')
           .text(item.name, PAGE.margin + 20, rowY, { width: contentWidth - 115 });
-        const priceStr = item.price > 0 ? `€${item.price}` : 'Incluso';
+        const priceStr = item.priceText ? item.priceText : (item.price > 0 ? `€${item.price}` : 'Da accordare');
         doc.fillColor(COLORS.primary).fontSize(10).font('Helvetica-Bold')
-          .text(priceStr, PAGE.margin + contentWidth - 75, rowY);
+          .text(priceStr, PAGE.margin + contentWidth - 85, rowY);
       });
       y += tableHeight + 22;
     }

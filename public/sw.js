@@ -1,6 +1,6 @@
-const CACHE_NAME = 'ravai-v1';
-const STATIC_CACHE = 'ravai-static-v1';
-const DYNAMIC_CACHE = 'ravai-dynamic-v1';
+const CACHE_NAME = 'ravai-v2';
+const STATIC_CACHE = 'ravai-static-v2';
+const DYNAMIC_CACHE = 'ravai-dynamic-v2';
 
 // Risorse da cachare immediatamente
 const STATIC_ASSETS = [
@@ -57,6 +57,19 @@ self.addEventListener('fetch', (event) => {
 
   // Non intercettare le API - lasciarle passare direttamente
   if (url.pathname.startsWith('/api/')) {
+    return;
+  }
+
+  // Non cachare favicon e manifest: devono aggiornarsi velocemente
+  if (
+    url.pathname === '/site.webmanifest' ||
+    url.pathname === '/favicon.ico' ||
+    url.pathname.includes('favicon') ||
+    url.pathname.includes('icon-192x192') ||
+    url.pathname.includes('icon-512x512') ||
+    url.pathname.includes('apple-touch-icon')
+  ) {
+    event.respondWith(fetch(request));
     return;
   }
 
