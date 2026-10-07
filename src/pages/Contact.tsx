@@ -4,6 +4,20 @@ import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-reac
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from '../config/emailjs';
 
+const WHATSAPP_LINK = 'https://wa.me/393395375902?text=Buongiorno%20Ravai%20vorrei%20contattarvi%20per%20';
+const WHATSAPP_QR_CODE = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=12&data=${encodeURIComponent(WHATSAPP_LINK)}`;
+
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .4 5.2.4 11.7c0 2.1.6 4.1 1.6 5.9L.3 24l6.6-1.7a11.9 11.9 0 0 0 5.6 1.4h.1c6.5 0 11.7-5.2 11.7-11.7 0-3.1-1.3-6.1-3.8-8.5ZM12.6 21.7h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.8Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.2-.2-.5-.4Z" />
+  </svg>
+);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -237,6 +251,34 @@ const Contact = () => {
               </div>
 
               <div className="space-y-6">
+                <a
+                  href={WHATSAPP_LINK}
+                  aria-label="Chat with us on WhatsApp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col sm:flex-row sm:items-center gap-6 p-6 bg-gradient-to-r from-emerald-50 to-green-100 rounded-2xl hover:from-emerald-100 hover:to-green-200 transition-all duration-300 group"
+                >
+                  <div className="flex items-center flex-1 min-w-0">
+                    <div className="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shrink-0">
+                      <WhatsAppIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-900 mb-1">WhatsApp</h3>
+                      <p className="text-slate-600">Chat with us on WhatsApp</p>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-xl p-3 shadow-sm self-start sm:self-center">
+                    <img
+                      src={WHATSAPP_QR_CODE}
+                      alt="QR code per contattare Ravai su WhatsApp"
+                      className="w-32 h-32"
+                      width="128"
+                      height="128"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+
                 {contactInfo.map((info, index) => (
                   <a
                     key={index}

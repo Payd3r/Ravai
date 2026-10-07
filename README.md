@@ -1,244 +1,133 @@
-# Vetrina Landing Page
+# 🚀 RAVAI — Digital Web Agency & Interactive Project Configurator
 
-Un sito web professionale per presentare i tuoi progetti ai clienti. Creato con React, TypeScript, Tailwind CSS e Vite.
-
-## 🚀 Caratteristiche
-
-- **Design Moderno**: Interfaccia pulita e professionale
-- **Responsive**: Ottimizzato per tutti i dispositivi
-- **Performance**: Build ottimizzato con Vite
-- **SEO**: Meta tags e struttura semantica
-- **Accessibilità**: WCAG compliant
-- **Docker Ready**: Configurazione completa per deployment
-
-## 🛠️ Tecnologie
-
-- **React 18** - Framework frontend
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling utility-first
-- **Vite** - Build tool veloce
-- **React Router** - Client-side routing
-- **Lucide React** - Icone moderne
-- **Docker** - Containerizzazione
-
-## 📁 Struttura del Progetto
-
-```
-src/
-├── components/          # Componenti riutilizzabili
-│   ├── Header.tsx
-│   ├── Footer.tsx
-│   ├── Hero.tsx
-│   ├── ProjectCard.tsx
-│   └── ScrollToTop.tsx
-├── pages/              # Pagine dell'applicazione
-│   ├── Projects.tsx    # Home page
-│   ├── ProjectDetail.tsx
-│   ├── About.tsx
-│   └── Contact.tsx
-├── data/               # Dati mock
-│   └── projects.ts
-├── types/              # Definizioni TypeScript
-│   └── Project.ts
-└── index.css           # Stili globali
-```
-
-## 🚀 Sviluppo Locale
-
-### Prerequisiti
-
-- Node.js 18+
-- npm o yarn
-
-### Installazione
-
-1. **Clona il repository**
-   ```bash
-   git clone <repository-url>
-   cd ravai
-   ```
-
-2. **Installa le dipendenze**
-   ```bash
-   npm install
-   ```
-
-3. **Avvia il server di sviluppo**
-   ```bash
-   npm run dev
-   ```
-
-4. **Apri il browser**
-   Naviga su `http://localhost:5173`
-
-## 🐳 Deployment con Docker
-
-### Prerequisiti
-
-- Docker Desktop
-- Docker Compose (incluso con Docker Desktop)
-
-### Metodo 1: Script Automatico
-
-#### Windows (PowerShell)
-```powershell
-.\build-docker.ps1
-```
-
-### Metodo 2: Comandi Manuali
-
-1. **Build dell'immagine**
-   ```bash
-   docker build -t vetrina-frontend .
-   ```
-
-2. **Avvia con Docker Compose**
-   ```bash
-   docker-compose up -d
-   ```
-
-3. **Oppure avvia con Docker**
-   ```bash
-   docker run -d -p 80:80 --name vetrina_frontend vetrina-frontend
-   ```
-
-4. **Accedi al sito**
-   Naviga su `http://localhost`
-
-### Comandi Utili
-
-```bash
-# Visualizza i log
-docker-compose logs -f
-
-# Ferma i container
-docker-compose down
-
-# Ricostruisci l'immagine
-docker-compose up -d --build
-
-# Rimuovi tutto
-docker-compose down -v
-docker system prune -f
-```
-
-## 📝 Aggiungere Nuovi Progetti
-
-1. **Modifica `src/data/projects.ts`**
-   ```typescript
-   {
-     id: 'project-3',
-     title: 'Nuovo Progetto',
-     description: 'Descrizione del progetto...',
-     shortDescription: 'Breve descrizione...',
-     image: '/mockups/nuovo-progetto.jpg',
-     mockups: [
-       '/mockups/nuovo-desktop.jpg',
-       '/mockups/nuovo-mobile.jpg'
-     ],
-     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-     category: 'landing-page',
-     year: 2024,
-     client: 'Nome Cliente',
-     url: 'https://example.com',
-     features: ['Caratteristica 1', 'Caratteristica 2'],
-     challenges: ['Sfida 1', 'Sfida 2'],
-     solutions: ['Soluzione 1', 'Soluzione 2']
-   }
-   ```
-
-2. **Aggiungi le immagini**
-   - Crea la cartella `public/mockups/`
-   - Inserisci le immagini dei mockups
-
-## 🎨 Personalizzazione
-
-### Colori
-Modifica `src/index.css` per cambiare la palette colori:
-```css
-:root {
-  --primary: #3B82F6;
-  --secondary: #8B5CF6;
-}
-```
-
-### Font
-Cambia il font in `src/index.css`:
-```css
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-```
-
-### Animazioni
-Aggiungi nuove animazioni in `tailwind.config.js`:
-```javascript
-animation: {
-  'fade-in': 'fadeIn 0.5s ease-in-out',
-  'slide-up': 'slideUp 0.5s ease-out',
-}
-```
-
-## 📦 Script Disponibili
-
-```bash
-# Sviluppo
-npm run dev          # Avvia server di sviluppo
-npm run build        # Build di produzione
-npm run preview      # Preview build di produzione
-
-# Docker
-.\build-docker.ps1   # Build e avvio automatico (Windows)
-```
-
-## 🌐 Deployment
-
-### Vercel
-1. Connetta il repository a Vercel
-2. Configura il build command: `npm run build`
-3. Configura l'output directory: `dist`
-
-### Netlify
-1. Connetta il repository a Netlify
-2. Configura il build command: `npm run build`
-3. Configura la publish directory: `dist`
-
-### Altri Provider
-Il progetto è compatibile con qualsiasi provider che supporta siti statici.
-
-## 🔧 Configurazione Avanzata
-
-### Variabili d'Ambiente
-Crea un file `.env`:
-```env
-VITE_APP_TITLE=Vetrina
-VITE_APP_DESCRIPTION=Vetrina ravai
-```
-
-### SEO
-Modifica `index.html` per ottimizzare SEO:
-```html
-<meta name="description" content="Vetrina progetti di Andrea Mauri">
-<meta name="keywords" content="sviluppatore web, React, TypeScript">
-```
-
-## 🤝 Contribuire
-
-1. Fork il progetto
-2. Crea un branch per la feature (`git checkout -b feature/AmazingFeature`)
-3. Commit le modifiche (`git commit -m 'Add some AmazingFeature'`)
-4. Push al branch (`git push origin feature/AmazingFeature`)
-5. Apri una Pull Request
-
-## 📄 Licenza
-
-Questo progetto è sotto licenza MIT. Vedi il file `LICENSE` per i dettagli.
-
-## 📞 Supporto
-
-Per domande o supporto:
-- Email: andrea@example.com
-- LinkedIn: [Andrea Mauri](https://linkedin.com/in/andrea-mauri)
-- GitHub: [andrea-mauri](https://github.com/andrea-mauri)
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge&logo=git" alt="Status" />
+  <img src="https://img.shields.io/badge/Frontend-React_18_+_Vite-61DAFB?style=for-the-badge&logo=react" alt="React 18" />
+  <img src="https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Styling-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" alt="TailwindCSS" />
+  <img src="https://img.shields.io/badge/Feature-Interactive_Configurator-FF9900?style=for-the-badge" alt="Configurator" />
+  <img src="https://img.shields.io/badge/DevOps-Docker_+_Nginx-2496ED?style=for-the-badge&logo=docker" alt="Docker" />
+</p>
 
 ---
 
-⭐ Se questo progetto ti è stato utile, considera di dargli una stella!
+## 📖 Panoramica
+
+**RAVAI** è la landing page e piattaforma ufficiale per la web agency RAVAI (sviluppo soluzioni digitali, e-commerce, PWA e landing page ad alte conversioni).
+
+Il sito offre una panoramica accattivante dei servizi e delle realizzazioni dell'agenzia, combinata con un sofisticato **Configuratore Interattivo di Progetti** a step. Attraverso il configuratore, i potenziali clienti possono personalizzare la tipologia di sito, funzionalità desiderate, tempistiche e budget, ricevendo una stima in tempo reale e inviando la richiesta direttamente tramite integrazione EmailJS.
+
+---
+
+## ✨ Funzionalità Chiave
+
+### 🎛️ Configuratore di Progetti a Step
+- **Wizard Interattivo (Step 1-4):** Selezione guidata tra Landing Page, Sito Vetrina, E-Commerce o Web App / PWA su misura.
+- **Logica di Esclusione Dinamica:** Hook proprietario `useCardExclusion` che adatta le opzioni selezionabili in base ai vincoli tecnici e di budget.
+- **Calcolo Preventivo in Tempo Reale:** Stima trasparente dell'investimento e della timeline stimata.
+- **Dispatch Richieste EmailJS:** Inoltro istantaneo dei dettagli configurati alla casella dell'agenzia con feedback visivo.
+
+### 🖼️ Showcase & Confronti Interattivi
+- **Slider Prima / Dopo:** Componenti dedicati (`BeforeAfterSlider.tsx`, `BeforeAfterCarousel.tsx`) per visualizzare il restyling grafico e prestazionale dei progetti dei clienti.
+- **Mockup Carousel:** Galleria responsive di preview desktop, tablet e mobile per ogni progetto in portfolio.
+- **Pagine di Dettaglio Progetto:** Approfondimenti su stack tecnologico, sfide risolte e risultati raggiunti.
+
+### ⚡ Ottimizzazioni Tecniche & SEO
+- **Script di Route Pre-rendering:** Generatore automatico di file HTML statici per ciascuna rotta (`scripts/generate-route-html.js`) a supporto dell'indicizzazione motori di ricerca.
+- **Smooth Scroll & Micro-Animazioni:** Scorrimento inerziale (`SmoothScroll.tsx`) e componenti animati Tailwind.
+- **Asset Pipeline:** Script per l'ottimizzazione e compressione delle immagini WebP.
+
+---
+
+## 🛠️ Stack Tecnologico
+
+| Layer | Tecnologie | Note |
+| :--- | :--- | :--- |
+| **Frontend Framework** | [React 18](https://react.dev/), [Vite](https://vitejs.dev/) | Client SPA moderno e compilazione ultrarapida |
+| **Linguaggio** | [TypeScript](https://www.typescriptlang.org/) | Type safety completa su dataset e stati del configuratore |
+| **Styling** | [TailwindCSS](https://tailwindcss.com/) | Design personalizzato, dark aesthetic e layout responsivo |
+| **Routing** | [React Router v6](https://reactrouter.com/) | Gestione URL client-side e schede progetto |
+| **Email Service** | [EmailJS](https://www.emailjs.com/) | Dispatcher email serverless per le richieste di preventivo |
+| **Icone** | [Lucide React](https://lucide.dev/) | Set iconografico coerente e leggero |
+| **DevOps** | [Docker Compose](https://docs.docker.com/compose/), [Nginx](https://nginx.org/) | Nginx Alpine multi-stage con caching e compressione gzip |
+
+---
+
+## 📂 Struttura del Progetto
+
+```bash
+RAVAI/
+├── nginx.conf                 # Configurazione server Nginx (SPA fallback, gzip)
+├── public/
+│   ├── carouselMockup/        # Asset per slider Before/After
+│   ├── robots.txt             # Direttive crawler
+│   └── sitemap.xml            # Mappa del sito
+├── scripts/
+│   ├── generate-route-html.js # Generazione statica HTML per SEO
+│   ├── optimize-images.js     # Script batch compressione immagini
+│   └── performance-analysis.js # Audit bundle e tempi di caricamento
+├── src/
+│   ├── components/            # Header, Footer, FAQ, MockupCarousel, BeforeAfterSlider
+│   │   └── Configurator/      # Step 1, 2, 3 e 4 del preventivatore
+│   ├── pages/                 # Projects, ProjectDetail, Products, Contact
+│   ├── data/                  # Dataset configuratore e progetti
+│   ├── hooks/                 # Custom hook (useCardExclusion)
+│   ├── config/emailjs.ts      # Configurazione credenziali EmailJS
+│   └── types/                 # Interfacce TypeScript
+├── Dockerfile                 # Multi-stage Docker build
+├── docker-compose.yml         # Compose stack per deploy
+└── README.md
+```
+
+---
+
+## 🚀 Guida all'Installazione Locale
+
+### Prerequisiti
+- **Node.js** >= 18
+- **npm** o **pnpm**
+
+### 1. Clonazione del Repository
+```bash
+git clone git@github.com:Payd3r/Landingpage.git
+cd RAVAI
+
+npm install
+```
+
+### 2. Configurazione Ambiente
+Crea un file `.env` per EmailJS:
+```env
+VITE_EMAILJS_SERVICE_ID=il_tuo_service_id
+VITE_EMAILJS_TEMPLATE_ID=il_tuo_template_id
+VITE_EMAILJS_PUBLIC_KEY=la_tua_public_key
+```
+
+### 3. Avvio in Sviluppo
+```bash
+npm run dev
+```
+Il sito sarà attivo su `http://localhost:5173`.
+
+### 4. Build di Produzione con Pre-rendering SEO
+```bash
+npm run build
+node scripts/generate-route-html.js
+```
+
+---
+
+## 🐳 Avvio con Docker
+
+```bash
+# Avvio del container collegato alla rete proxy
+docker compose up -d --build
+```
+
+---
+
+## 👤 Autore & Team
+
+**Andrea Mauri** (RAVAI Digital Solutions)
+- Website: [ravai.it](https://www.ravai.it/)
+- GitHub: [@Payd3r](https://github.com/Payd3r)
